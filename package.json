@@ -6,7 +6,7 @@
     "start": "nx serve",
     "lint": "nx lint",
     "test": "nx test",
-    "build": "nx build --base-href /camie/",
+    "build": "nx build --base-href /fr/",
     "deploy:camie-riu-esate": "ngh --dir=dist/camie-riu-estate/browser",
     "deploy": "npm-run-all lint test build deploy:*",
     "prepare": "husky"
