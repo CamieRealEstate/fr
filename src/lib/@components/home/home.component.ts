@@ -4,7 +4,7 @@ import { RouterLink } from '@angular/router';
 import { MatTooltip } from '@angular/material/tooltip';
 
 @Component({
-  selector: 'lib-home',
+  selector: 'app-home',
   standalone: true,
   imports: [CommonModule, NgOptimizedImage, RouterLink, MatTooltip],
   templateUrl: './home.component.html',

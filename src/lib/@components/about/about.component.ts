@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'lib-about',
+  selector: 'app-about',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './about.component.html',

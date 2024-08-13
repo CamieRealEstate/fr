@@ -5,7 +5,7 @@ import { FooterComponent } from '../footer';
 import { ListingComponent } from '../listing';
 
 @Component({
-  selector: 'lib-layout',
+  selector: 'app-layout',
   standalone: true,
   imports: [CommonModule, HeaderComponent, FooterComponent, ListingComponent],
   templateUrl: './layout.component.html',

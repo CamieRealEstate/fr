@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'lib-regions',
+  selector: 'app-regions',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './regions.component.html',
