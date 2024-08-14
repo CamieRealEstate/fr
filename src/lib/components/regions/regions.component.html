@@ -3,6 +3,8 @@
   <ng-container *ngIf="isMobile(); else desktopView">
     <div class="grid grid-rows-3 p-2 h-[90dvh]">
       <div
+        *ngIf="true"
+        [@quickFadeIn]
         class="flex h-[28dvh] w-full items-center justify-center"
         routerLink="/listing/HN"
       >
@@ -24,6 +26,8 @@
         </article>
       </div>
       <div
+        *ngIf="true"
+        [@fadeIn]
         class="flex h-[28dvh] w-full items-center justify-center"
         routerLink="/listing/DN"
       >
@@ -45,6 +49,8 @@
         </article>
       </div>
       <div
+        *ngIf="true"
+        [@slowFadeIn]
         class="flex h-[28dvh] w-full items-center justify-center"
         routerLink="/listing/HCM"
       >
@@ -70,6 +76,8 @@
   <ng-template #desktopView>
     <div class="grid grid-cols-3 h-[90dvh] px-1">
       <div
+        *ngIf="true"
+        [@quickFadeIn]
         class="flex h-[88dvh] items-center justify-center"
         routerLink="/listing/HN"
       >
@@ -103,6 +111,8 @@
         </article>
       </div>
       <div
+        *ngIf="true"
+        [@fadeIn]
         class="flex h-[88dvh] items-center justify-center"
         routerLink="/listing/DN"
       >
@@ -136,6 +146,8 @@
         </article>
       </div>
       <div
+        *ngIf="true"
+        [@slowFadeIn]
         class="flex h-[88dvh] items-center justify-center"
         routerLink="/listing/HCM"
       >

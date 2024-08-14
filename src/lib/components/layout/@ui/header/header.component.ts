@@ -5,7 +5,7 @@ import { MatIcon } from '@angular/material/icon';
 import { MatFormField, MatLabel } from '@angular/material/form-field';
 import { MatOption, MatSelect } from '@angular/material/select';
 import { FormsModule } from '@angular/forms';
-import { trigger, transition, style, animate, keyframes } from '@angular/animations';
+import { trigger, transition, style, animate } from '@angular/animations';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 interface Lang {
@@ -39,7 +39,7 @@ export class HeaderComponent {
     { code: 'vi', name: 'Tiếng Việt', icon: 'vi.png' },
   ];
   readonly isMobile = window.innerWidth < window.innerHeight;
-  lang = signal(new URLSearchParams(window.location.search).get('lang') || 'en');
+  lang = signal(localStorage.getItem('lang') || 'en');
   isMenuOpen = signal(false);
 
   toggleMenu() {
@@ -48,6 +48,7 @@ export class HeaderComponent {
   }
 
   changeLanguage(language: string) {
+    localStorage.setItem('lang', language);
     this.translate.setDefaultLang(language);
     this.isMenuOpen.set(!this.isMenuOpen());
     this.cdr.detectChanges();

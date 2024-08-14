@@ -12,10 +12,13 @@ import { TranslateService } from '@ngx-translate/core';
 export class AppComponent implements OnInit {
   private translate = inject(TranslateService);
 
-  lang = signal('en');
+  lang = signal(localStorage.getItem('lang') || 'en');
   title = 'camie-real-estate';
 
-  ngOnInit() {  
-    this.translate.setDefaultLang(new URLSearchParams(window.location.search).get('lang') || this.lang());
+  ngOnInit() {
+    const lang = new URLSearchParams(window.location.search).get('lang') || this.lang();
+    
+    localStorage.setItem('lang', lang);
+    this.translate.setDefaultLang(lang);
   }
 }
