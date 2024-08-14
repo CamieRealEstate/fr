@@ -1,6 +1,162 @@
-<div class="h-screen w-screen">
+<div class="h-dvh">
   <app-header></app-header>
-  <img src="/regions/HN.jpg" class="scaled-img">
-  <img src="/regions/DN.jpg" class="scaled-img">
-  <img src="/regions/HCM.jpg" class="scaled-img">
+  <ng-container *ngIf="isMobile(); else desktopView">
+    <div class="grid grid-rows-3 p-2 h-[88dvh]">
+      <div class="flex h-[28dvh] w-full items-center justify-center" routerLink="/listing/HN">
+        <article
+          class='group relative aspect-video h-[28dvh] w-full cursor-pointer overflow-hidden rounded-xl shadow-md'
+        >
+          <img
+            class='absolute inset-0 h-full w-full object-cover opacity-90'
+            src="/regions/HN-m.jpg"
+            alt=''
+          />
+          <div
+            class='absolute inset-0 bg-gradient-to-t from-black/0 to-transparent to-90% text-black'
+          >
+            <h2
+              class='absolute bottom-8 left-8 m-0 font-extrabold'
+            >
+              {{ 'Ha Noi' | translate }}
+            </h2>
+          </div>
+        </article>
+      </div>
+      <div class="flex h-[28dvh] w-full items-center justify-center" routerLink="/listing/DN">
+        <article
+          class='group relative aspect-video h-[28dvh] w-full cursor-pointer overflow-hidden rounded-xl shadow-md'
+        >
+          <img
+            class='absolute inset-0 h-full w-full object-cover opacity-90'
+            src="/regions/DN-m.jpg"
+            alt=''
+          />
+          <div
+            class='absolute inset-0 bg-gradient-to-t from-black/0 to-transparent to-90% text-black
+'
+          >
+            <h2
+              class='absolute bottom-8 left-8 m-0 font-extrabold'
+            >
+              {{ 'Da Nang' | translate }}
+            </h2>
+          </div>
+        </article>
+      </div>
+      <div class="flex h-[28dvh] w-full items-center justify-center" routerLink="/listing/HCM">
+        <article
+          class='group relative aspect-video h-[28dvh] w-full cursor-pointer overflow-hidden rounded-xl shadow-md'
+        >
+          <img
+            class='absolute inset-0 h-full w-full object-cover opacity-90'
+            src="/regions/HCM-m.jpg"
+            alt=''
+          />
+          <div
+            class='absolute inset-0 bg-gradient-to-t from-black/0 to-transparent to-90% text-black'
+          >
+            <h2
+              class='absolute bottom-8 left-8 m-0 font-extrabold'
+            >
+              {{ 'Ho Chi Minh' | translate }}
+            </h2>
+          </div>
+        </article>
+      </div>
+    </div>
+  </ng-container>
+  <ng-template #desktopView>
+    <div class="grid grid-cols-3 h-[88dvh] px-1">
+      <div class="flex h-[88dvh] items-center justify-center" routerLink="/listing/HN">
+        <article
+          class='group relative aspect-video h-[88dvh] w-[32vw] cursor-pointer overflow-hidden rounded-xl shadow-md hover:shadow-2xl'
+        >
+          <img
+            class='absolute inset-0 h-full w-full object-cover opacity-90 transition-opacity duration-300 ease-out group-hover:opacity-100 group-hover:transition-opacity group-hover:duration-300'
+            src='https://images.unsplash.com/photo-1682687220063-4742bd7fd538?q=80&w=3175&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+            alt=''
+          />
+          <div
+            class='absolute inset-0 bg-gradient-to-t from-black/0 to-transparent to-90% text-white transition-all duration-300 group-hover:bg-gradient-to-t group-hover:from-black/60 group-hover:transition-all group-hover:duration-500'
+          >
+            <h2
+              class='absolute bottom-8 left-8 m-0 font-extrabold transition-all delay-300 duration-100 ease-out group-hover:bottom-1/3 group-hover:delay-0 group-hover:duration-300'
+            >
+              {{ 'Ha Noi' | translate }}
+            </h2>
+            <p
+              class='absolute left-8 top-[65%] line-clamp-4 max-w-[80%] pt-4 opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-100 group-hover:delay-500 group-hover:duration-300'
+            >
+              {{ 'Ha Noi desc' | translate }}
+            </p>
+            <a
+              class='absolute bottom-8 left-8 max-w-[80%] rounded-lg border px-4 py-2 opacity-0 transition-opacity ease-out group-hover:opacity-100 group-hover:transition-opacity group-hover:delay-500 group-hover:duration-300'
+            >
+              {{ 'More' | translate }}
+            </a>
+          </div>
+        </article>
+      </div>
+      <div class="flex h-[88dvh] items-center justify-center" routerLink="/listing/DN">
+        <article
+          class='group relative aspect-video h-[88dvh] w-[32vw] cursor-pointer overflow-hidden rounded-xl shadow-md hover:shadow-2xl'
+        >
+          <img
+            class='absolute inset-0 h-full w-full object-cover opacity-90 transition-opacity duration-300 ease-out group-hover:opacity-100 group-hover:transition-opacity group-hover:duration-300'
+            src='https://images.unsplash.com/photo-1682687220063-4742bd7fd538?q=80&w=3175&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+            alt=''
+          />
+          <div
+            class='absolute inset-0 bg-gradient-to-t from-black/0 to-transparent to-90% text-white transition-all duration-300 group-hover:bg-gradient-to-t group-hover:from-black/60 group-hover:transition-all group-hover:duration-500'
+          >
+            <h2
+              class='absolute bottom-8 left-8 m-0 font-extrabold transition-all delay-300 duration-100 ease-out group-hover:bottom-1/3 group-hover:delay-0 group-hover:duration-300'
+            >
+              {{ 'Da Nang' | translate }}
+            </h2>
+            <p
+              class='absolute left-8 top-[65%] line-clamp-4 max-w-[80%] pt-4 opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-100 group-hover:delay-500 group-hover:duration-300'
+            >
+              {{ 'Da Nang desc' | translate }}
+            </p>
+            <a
+              class='absolute bottom-8 left-8 max-w-[80%] rounded-lg border px-4 py-2 opacity-0 transition-opacity ease-out group-hover:opacity-100 group-hover:transition-opacity group-hover:delay-500 group-hover:duration-300'
+            >
+              {{ 'More' | translate }}
+            </a>
+          </div>
+        </article>
+      </div>
+      <div class="flex h-[88dvh] items-center justify-center" routerLink="/listing/HCM">
+        <article
+          class='group relative aspect-video h-[88dvh] w-[32vw] cursor-pointer overflow-hidden rounded-xl shadow-md hover:shadow-2xl'
+        >
+          <img
+            class='absolute inset-0 h-full w-full object-cover opacity-90 transition-opacity duration-300 ease-out group-hover:opacity-100 group-hover:transition-opacity group-hover:duration-300'
+            src='https://images.unsplash.com/photo-1682687220063-4742bd7fd538?q=80&w=3175&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+            alt=''
+          />
+          <div
+            class='absolute inset-0 bg-gradient-to-t from-black/0 to-transparent to-90% text-white transition-all duration-300 group-hover:bg-gradient-to-t group-hover:from-black/60 group-hover:transition-all group-hover:duration-500'
+          >
+            <h2
+              class='absolute bottom-8 left-8 m-0 font-extrabold transition-all delay-300 duration-100 ease-out group-hover:bottom-1/3 group-hover:delay-0 group-hover:duration-300'
+            >
+              {{ 'Ho Chi Minh' | translate }}
+            </h2>
+            <p
+              class='absolute left-8 top-[65%] line-clamp-4 max-w-[80%] pt-4 opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-100 group-hover:delay-500 group-hover:duration-300'
+            >
+              {{ 'Ho Chi Minh desc' | translate }}
+            </p>
+            <a
+              class='absolute bottom-8 left-8 max-w-[80%] rounded-lg border px-4 py-2 opacity-0 transition-opacity ease-out group-hover:opacity-100 group-hover:transition-opacity group-hover:delay-500 group-hover:duration-300'
+            >
+              {{ 'More' | translate }}
+            </a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </ng-template>
 </div>

@@ -16,6 +16,10 @@ export const appRoutes: Route[] = [
         component: LayoutComponent,
     },
     {
+        path: 'listing/:id',
+        component: LayoutComponent,
+    },
+    {
         path: 'regions',
         component: RegionsComponent,
     },
