@@ -1,3 +1,43 @@
+<!-- Top navigation -->
 <div class="h-[10%] w-screen">
-  <p>header works!</p>
+  <div class="h-full p-2 flex">
+    <button
+      *ngIf="isMobile"
+      class="align-middle px-2"
+      type="button"
+      (click)="toggleMenu()"
+    >
+      <mat-icon *ngIf="!isMenuOpen()">menu</mat-icon>
+      <mat-icon *ngIf="isMenuOpen()">arrow_back_ios</mat-icon>
+    </button>
+    <img
+      src="https://jw-marriott.marriott.com/wp-content/uploads/sites/8/2019/08/JWM_Logo_Vertical_wRMark_4C.png"
+      class="h-[100%]"
+      routerLink="/"
+      alt=""
+    />
+  </div>
+</div>
+
+<!-- Mobile side bar -->
+<div *ngIf="isMenuOpen()" class="side-bar flex flex-col justify-between" [@fadeInOut]>
+  <ul>
+    <li><a routerLink="">{{ 'Home' | translate }}</a></li>
+    <li><a routerLink="/about">{{ 'About' | translate }}</a></li>
+    <li><a routerLink="/regions">{{ 'Regions' | translate }}</a></li>
+  </ul>
+  <mat-form-field>
+    <mat-label>{{ 'Language' | translate }}</mat-label>
+    <mat-select [(ngModel)]="lang" (selectionChange)="changeLanguage($event.value)">
+      @for (lang of langs; track lang.code) {
+        <mat-option [value]="lang.code">
+          <img
+            class="h-8 inline"
+            src="{{lang.icon}}"
+            alt="" />
+          {{ lang.name }}
+        </mat-option>
+      }
+    </mat-select>
+  </mat-form-field>
 </div>

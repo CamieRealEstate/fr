@@ -9,8 +9,9 @@ import { appRoutes } from './app.routes';
 
 export const appConfig: ApplicationConfig = {
   providers: [
+    provideAnimationsAsync(),
     provideHttpClient(withInterceptors([statusInterceptor])),
-    provideRouter(appRoutes), provideAnimationsAsync(),
+    provideRouter(appRoutes), 
     provideTranslate(),
     provideZoneChangeDetection({ eventCoalescing: true }),
   ],
