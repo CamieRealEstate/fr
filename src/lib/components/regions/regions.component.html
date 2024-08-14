@@ -1,7 +1,7 @@
 <div class="h-dvh">
   <app-header></app-header>
   <ng-container *ngIf="isMobile(); else desktopView">
-    <div class="grid grid-rows-3 p-2 h-[88dvh]">
+    <div class="grid grid-rows-3 p-2 h-[90dvh]">
       <div
         class="flex h-[28dvh] w-full items-center justify-center"
         routerLink="/listing/HN"
@@ -17,7 +17,7 @@
           <div
             class="absolute inset-0 bg-gradient-to-t from-black/0 to-transparent to-90% text-black"
           >
-            <h2 class="absolute bottom-8 left-8 m-0 font-extrabold">
+            <h2 class="absolute bottom-4 left-5 m-0 font-bold">
               {{ 'Ha Noi' | translate }}
             </h2>
           </div>
@@ -38,7 +38,7 @@
           <div
             class="absolute inset-0 bg-gradient-to-t from-black/0 to-transparent to-90% text-black"
           >
-            <h2 class="absolute bottom-8 left-8 m-0 font-extrabold">
+            <h2 class="absolute bottom-4 left-5 m-0 font-bold">
               {{ 'Da Nang' | translate }}
             </h2>
           </div>
@@ -59,7 +59,7 @@
           <div
             class="absolute inset-0 bg-gradient-to-t from-black/0 to-transparent to-90% text-black"
           >
-            <h2 class="absolute bottom-8 left-8 m-0 font-extrabold">
+            <h2 class="absolute bottom-4 left-5 m-0 font-bold">
               {{ 'Ho Chi Minh' | translate }}
             </h2>
           </div>
@@ -68,7 +68,7 @@
     </div>
   </ng-container>
   <ng-template #desktopView>
-    <div class="grid grid-cols-3 h-[88dvh] px-1">
+    <div class="grid grid-cols-3 h-[90dvh] px-1">
       <div
         class="flex h-[88dvh] items-center justify-center"
         routerLink="/listing/HN"
