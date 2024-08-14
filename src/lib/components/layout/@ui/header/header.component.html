@@ -1,5 +1,5 @@
 <!-- Top navigation -->
-<div class="h-[10%] w-screen">
+<div class="header-container h-[10%] w-screen">
   <div class="h-full p-2 flex">
     <button
       *ngIf="isMobile"
@@ -16,25 +16,50 @@
       routerLink="/"
       alt=""
     />
+    <div *ngIf="!isMobile" class="flex justify-end px-3 w-full">
+      @for (link of links; track link.name) {
+        <a routerLink="{{link.route}}" [routerLinkActive]="['active-link']"
+           [routerLinkActiveOptions]="{exact: true}">{{ link.name | translate }}</a>
+      }
+      <mat-form-field>
+        <mat-select
+          [(ngModel)]="lang"
+          (selectionChange)="changeLang($event.value)"
+        >
+          @for (lang of langs; track lang.code) {
+            <mat-option [value]="lang.code">
+              <img class="h-4 inline" src="{{ lang.icon }}" alt="" />
+              {{ lang.name }}
+            </mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+    </div>
   </div>
 </div>
 
 <!-- Mobile side bar -->
-<div *ngIf="isMenuOpen()" class="side-bar flex flex-col justify-between" [@fadeInOut]>
+<div
+  *ngIf="isMenuOpen()"
+  class="side-bar flex flex-col justify-between"
+  [@fadeInOut]
+>
   <ul>
-    <li><a routerLink="">{{ 'Home' | translate }}</a></li>
-    <li><a routerLink="/about">{{ 'About' | translate }}</a></li>
-    <li><a routerLink="/regions">{{ 'Regions' | translate }}</a></li>
+    @for (link of links; track link.name) {
+      <li>
+        <a routerLink="{{link.route}}">{{ link.name | translate }}</a>
+      </li>
+    }
   </ul>
   <mat-form-field>
     <mat-label>{{ 'Language' | translate }}</mat-label>
-    <mat-select [(ngModel)]="lang" (selectionChange)="changeLanguage($event.value)">
+    <mat-select
+      [(ngModel)]="lang"
+      (selectionChange)="changeLanguage($event.value)"
+    >
       @for (lang of langs; track lang.code) {
         <mat-option [value]="lang.code">
-          <img
-            class="h-8 inline"
-            src="{{lang.icon}}"
-            alt="" />
+          <img class="h-8 inline" src="{{ lang.icon }}" alt="" />
           {{ lang.name }}
         </mat-option>
       }

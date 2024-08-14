@@ -1,22 +1,19 @@
 import { ChangeDetectorRef, Component, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
+import { RouterLink, RouterLinkActive } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 import { MatIcon } from '@angular/material/icon';
 import { MatFormField, MatLabel } from '@angular/material/form-field';
 import { MatOption, MatSelect } from '@angular/material/select';
-import { FormsModule } from '@angular/forms';
 import { trigger, transition, style, animate } from '@angular/animations';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
-interface Lang {
-  code: string;
-  name: string;
-  icon: string;
-}
+import { langs, links } from './header.entities';
+
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule, RouterLink, MatIcon, MatFormField, MatSelect, MatOption, MatLabel, FormsModule, TranslateModule],
+  imports: [CommonModule, RouterLink, MatIcon, MatFormField, MatSelect, MatOption, MatLabel, FormsModule, TranslateModule, RouterLinkActive],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
   animations: [
@@ -34,13 +31,13 @@ interface Lang {
 export class HeaderComponent {
   private cdr = inject(ChangeDetectorRef);
   private translate = inject(TranslateService);
-  readonly langs: Lang[] = [
-    { code: 'en', name: 'English', icon: 'en.png' },
-    { code: 'vi', name: 'Tiếng Việt', icon: 'vi.png' },
-  ];
+  
+  readonly langs = langs;
+  readonly links = links;
   readonly isMobile = window.innerWidth < window.innerHeight;
   lang = signal(localStorage.getItem('lang') || 'en');
   isMenuOpen = signal(false);
+  isLangMenuOpen = signal(false);
 
   toggleMenu() {
     this.isMenuOpen.set(!this.isMenuOpen());
@@ -52,5 +49,14 @@ export class HeaderComponent {
     this.translate.setDefaultLang(language);
     this.isMenuOpen.set(!this.isMenuOpen());
     this.cdr.detectChanges();
+  }
+
+  changeLang(language: string) {
+    localStorage.setItem('lang', language);
+    this.translate.setDefaultLang(language);
+  }
+
+  toggleLangDropdown() {
+    this.isLangMenuOpen.set(!this.isLangMenuOpen());
   }
 }

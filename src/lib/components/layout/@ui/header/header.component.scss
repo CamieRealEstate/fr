@@ -16,3 +16,23 @@
     top: 4%;
   }
 }
+
+.header-container {
+  a {
+    margin: 1rem;
+    font-weight: 500;
+
+    &:hover {
+      border-bottom: 3px solid #000000;
+    }
+  }
+
+  mat-form-field {
+    --mdc-filled-text-field-container-color: #ffffff;
+    width: 11rem;
+  }
+}
+
+.active-link {
+  border-bottom: 3px solid #000000;
+}
