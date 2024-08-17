@@ -1,6 +1,6 @@
 import { Route } from '@angular/router';
 
-import { AboutComponent, HomeComponent, LayoutComponent, RegionsComponent } from '../lib';
+import { AboutComponent, HomeComponent, LayoutComponent } from '../lib';
 
 export const appRoutes: Route[] = [
     {
@@ -18,9 +18,5 @@ export const appRoutes: Route[] = [
     {
         path: 'listing/:id',
         component: LayoutComponent,
-    },
-    {
-        path: 'regions',
-        component: RegionsComponent,
-    },
+    }
 ];

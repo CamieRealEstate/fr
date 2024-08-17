@@ -1,0 +1,13 @@
+<mat-form-field>
+  <mat-select
+    [(ngModel)]="lang"
+    (selectionChange)="changeLang($event.value)"
+  >
+    @for (lang of langs; track lang.code) {
+      <mat-option [value]="lang.code">
+        <img class="h-4 inline pr-2" src="{{ lang.icon }}" alt="" />
+        {{ lang.name }}
+      </mat-option>
+    }
+  </mat-select>
+</mat-form-field>

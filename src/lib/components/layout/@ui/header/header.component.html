@@ -21,19 +21,7 @@
         <a routerLink="{{link.route}}" [routerLinkActive]="['active-link']"
            [routerLinkActiveOptions]="{exact: true}">{{ link.name | translate }}</a>
       }
-      <mat-form-field>
-        <mat-select
-          [(ngModel)]="lang"
-          (selectionChange)="changeLang($event.value)"
-        >
-          @for (lang of langs; track lang.code) {
-            <mat-option [value]="lang.code">
-              <img class="h-4 inline" src="{{ lang.icon }}" alt="" />
-              {{ lang.name }}
-            </mat-option>
-          }
-        </mat-select>
-      </mat-form-field>
+     <app-language></app-language>
     </div>
   </div>
 </div>

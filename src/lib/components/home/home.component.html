@@ -1,14 +1,187 @@
-<div class="container">
-  <img [ngSrc]="getLandingPageImgSrc()" alt="Landing Page" fill priority />
-
-  <div class="arrows-container">
-    <a routerLink="regions">
-      <svg class="arrows">
-        <path class="a1" d="M0 0 L30 32 L60 0"></path>
-        <path class="a2" d="M0 20 L30 52 L60 20"></path>
-        <path class="a3" d="M0 40 L30 72 L60 40"></path>
-      </svg>
-      <span class="text-white">{{ 'Regions' | translate }}</span>
-    </a>
+<div class="home-container text-white">
+  <!--  Language component-->
+  <div class="w-[100vw] h-[10dvh] flex justify-end">
+    <app-language></app-language>
   </div>
+
+  <!--  Logo-->
+  <div
+    class="w-[100vw] flex justify-center fixed lg:top-[35dvh] top-[43dvh]"
+    *ngIf="true"
+    [@slowerFadeInTop]
+  >
+    <img src="logo.png" alt="" class="w-[40vw]" />
+  </div>
+
+  <!--  Button-->
+  <ng-container *ngIf="isMobile(); else desktopView">
+    <div class="grid grid-cols-3 p-2 h-[30dvh] fixed top-[65dvh]">
+      <div
+        *ngIf="true"
+        [@quickFadeInLeft]
+        class="flex h-[28dvh] w-full items-center justify-center"
+        routerLink="/listing/HN"
+      >
+        <article
+          class="group relative aspect-video h-[28dvh] w-full cursor-pointer overflow-hidden rounded-xl shadow-md"
+        >
+          <div class="p-2 flex justify-center w-full h-full border-b text-gray-400">
+            <h2 class="font-bold">
+              {{ 'Ha Noi' | translate }}
+            </h2>
+          </div>
+        </article>
+      </div>
+      <div
+        *ngIf="true"
+        [@fadeInLeft]
+        class="flex h-[28dvh] w-full items-center justify-center"
+        routerLink="/listing/DN"
+      >
+        <article
+          class="group relative aspect-video h-[28dvh] w-full cursor-pointer overflow-hidden rounded-xl shadow-md"
+        >
+          <div class="p-2 flex justify-center w-full h-full border-t text-gray-400">
+            <h2 class="font-bold">
+              {{ 'Da Nang' | translate }}
+            </h2>
+          </div>
+        </article>
+      </div>
+      <div
+        *ngIf="true"
+        [@slowFadeInLeft]
+        class="flex h-[28dvh] w-full items-center justify-center"
+        routerLink="/listing/HCM"
+      >
+        <article
+          class="group relative aspect-video h-[28dvh] w-full cursor-pointer overflow-hidden rounded-xl shadow-md"
+        >
+          <div class="p-2 flex justify-center w-full h-full border-l text-gray-400">
+            <h2 class="font-bold">
+              {{ 'Ho Chi Minh' | translate }}
+            </h2>
+          </div>
+        </article>
+      </div>
+    </div>
+  </ng-container>
+  <ng-template #desktopView>
+    <div
+      class="grid grid-cols-3 h-[30dvh] w-[60vw] px-1 fixed top-[60dvh] right-[20vw]"
+    >
+      <div
+        *ngIf="true"
+        [@quickFadeInTop]
+        class="flex h-[28dvh] items-center justify-center"
+        routerLink="/listing/HN"
+      >
+        <article
+          class="group relative aspect-video h-[28dvh] w-[32vw] cursor-pointer overflow-hidden rounded-xl shadow-md hover:shadow-2xl"
+        >
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/0 to-transparent to-90% text-white transition-all duration-300 group-hover:bg-gradient-to-t group-hover:from-black/60 group-hover:transition-all group-hover:duration-1000 group-hover:border-r group-hover:border-b"
+          >
+            <h2
+              class="w-[14vw] text-center absolute bottom-8 left-8 m-0 font-extrabold transition-all delay-300 duration-100 ease-out group-hover:bottom-3/4 group-hover:delay-0 group-hover:duration-300"
+            >
+              {{ 'Ha Noi' | translate }}
+            </h2>
+            <p
+              class="absolute left-8 top-[20%] line-clamp-3 max-w-[80%] pt-4 opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-100 group-hover:delay-200 group-hover:duration-300"
+            >
+              {{ 'Ha Noi desc' | translate }}
+            </p>
+            <a
+              class="w-[14vw] text-center absolute bottom-8 left-8 max-w-[80%] rounded-lg border px-4 py-2 opacity-0 transition-opacity ease-out group-hover:opacity-100 group-hover:transition-opacity group-hover:delay-300 group-hover:duration-300"
+            >
+              {{ 'More' | translate }}
+            </a>
+          </div>
+        </article>
+      </div>
+      <div
+        *ngIf="true"
+        [@fadeInTop]
+        class="flex h-[28dvh] items-center justify-center"
+        routerLink="/listing/DN"
+      >
+        <article
+          class="group relative aspect-video h-[28dvh] w-[32vw] cursor-pointer overflow-hidden rounded-xl shadow-md hover:shadow-2xl"
+        >
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/0 to-transparent to-90% text-white transition-all duration-300 group-hover:bg-gradient-to-t group-hover:from-black/60 group-hover:transition-all group-hover:duration-500 group-hover:border-t"
+          >
+            <h2
+              class="w-[14vw] text-center absolute bottom-8 left-8 m-0 font-extrabold transition-all delay-300 duration-100 ease-out group-hover:bottom-3/4 group-hover:delay-0 group-hover:duration-300"
+            >
+              {{ 'Da Nang' | translate }}
+            </h2>
+            <p
+              class="absolute left-8 top-[20%] line-clamp-3 max-w-[80%] pt-4 opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-100 group-hover:delay-200 group-hover:duration-300"
+            >
+              {{ 'Da Nang desc' | translate }}
+            </p>
+            <a
+              class="w-[14vw] text-center absolute bottom-8 left-8 max-w-[80%] rounded-lg border px-4 py-2 opacity-0 transition-opacity ease-out group-hover:opacity-100 group-hover:transition-opacity group-hover:delay-300 group-hover:duration-300"
+            >
+              {{ 'More' | translate }}
+            </a>
+          </div>
+        </article>
+      </div>
+      <div
+        *ngIf="true"
+        [@slowFadeInTop]
+        class="flex h-[28dvh] items-center justify-center"
+        routerLink="/listing/HCM"
+      >
+        <article
+          class="group relative aspect-video h-[28dvh] w-[32vw] cursor-pointer overflow-hidden rounded-xl shadow-md hover:shadow-2xl"
+        >
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/0 to-transparent to-90% text-white transition-all duration-300 group-hover:bg-gradient-to-t group-hover:from-black/60 group-hover:transition-all group-hover:duration-500 group-hover:border-l group-hover:border-b"
+          >
+            <h2
+              class="w-[14vw] text-center absolute bottom-8 left-8 m-0 font-extrabold transition-all delay-300 duration-100 ease-out group-hover:bottom-3/4 group-hover:delay-0 group-hover:duration-300"
+            >
+              {{ 'Ho Chi Minh' | translate }}
+            </h2>
+            <p
+              class="absolute left-8 top-[20%] line-clamp-3 max-w-[80%] pt-4 opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-100 group-hover:delay-200 group-hover:duration-300"
+            >
+              {{ 'Ho Chi Minh desc' | translate }}
+            </p>
+            <a
+              class="w-[14vw] text-center absolute bottom-8 left-8 max-w-[80%] rounded-lg border px-4 py-2 opacity-0 transition-opacity ease-out group-hover:opacity-100 group-hover:transition-opacity group-hover:delay-300 group-hover:duration-300"
+            >
+              {{ 'More' | translate }}
+            </a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </ng-template>
+
+  <!--  Background video-->
+  <video
+    autoplay
+    loop
+    [muted]="'muted'"
+    class="bg-black text-white w-full h-full"
+    style="
+      position: absolute;
+      z-index: -1;
+      top: 0px;
+      left: 50%;
+      transform: translate(-50%, 0px);
+      visibility: visible;
+      opacity: 1;
+    "
+  >
+    <source
+      src="https://www.editionhotels.com/wp-content/themes/edition/video/edition-homepage-video.mp4"
+      type="video/mp4"
+    />
+  </video>
 </div>

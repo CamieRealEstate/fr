@@ -4,5 +4,4 @@ export * from './home';
 export * from './layout/@ui/header';
 export * from './layout';
 export * from './layout/@ui/listing';
-export * from './regions';
-export * from './layout/@ui/header/@ui/search';
+export * from './@ui';

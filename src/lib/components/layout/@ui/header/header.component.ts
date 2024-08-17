@@ -8,12 +8,14 @@ import { MatOption, MatSelect } from '@angular/material/select';
 import { trigger, transition, style, animate } from '@angular/animations';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
-import { langs, links } from './header.entities';
+import { LanguageComponent, DEFAULT_LANG, KEY_LANG, langs } from '../../../@ui';
+
+import { links } from './header.entities';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule, RouterLink, MatIcon, MatFormField, MatSelect, MatOption, MatLabel, FormsModule, TranslateModule, RouterLinkActive],
+  imports: [CommonModule, RouterLink, MatIcon, MatFormField, MatSelect, MatOption, MatLabel, FormsModule, TranslateModule, RouterLinkActive, LanguageComponent],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
   animations: [
@@ -35,9 +37,8 @@ export class HeaderComponent {
   readonly langs = langs;
   readonly links = links;
   readonly isMobile = window.innerWidth < window.innerHeight;
-  lang = signal(localStorage.getItem('lang') || 'en');
+  lang = signal(localStorage.getItem(KEY_LANG) || DEFAULT_LANG);
   isMenuOpen = signal(false);
-  isLangMenuOpen = signal(false);
 
   toggleMenu() {
     this.isMenuOpen.set(!this.isMenuOpen());
@@ -49,14 +50,5 @@ export class HeaderComponent {
     this.translate.setDefaultLang(language);
     this.isMenuOpen.set(!this.isMenuOpen());
     this.cdr.detectChanges();
-  }
-
-  changeLang(language: string) {
-    localStorage.setItem('lang', language);
-    this.translate.setDefaultLang(language);
-  }
-
-  toggleLangDropdown() {
-    this.isLangMenuOpen.set(!this.isLangMenuOpen());
   }
 }
