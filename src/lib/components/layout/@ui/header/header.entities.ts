@@ -4,7 +4,6 @@ export interface Link {
 }
 
 export const links: Link[] = [
-  { name: 'Home', route: '/' },
   { name: 'About', route: '/about' },
-  { name: 'Regions', route: '/regions' },
+  { name: 'Listing', route: '/listing' },
 ];

@@ -46,7 +46,7 @@ export class HeaderComponent {
   }
 
   changeLanguage(language: string) {
-    localStorage.setItem('lang', language);
+    localStorage.setItem(KEY_LANG, language);
     this.translate.setDefaultLang(language);
     this.isMenuOpen.set(!this.isMenuOpen());
     this.cdr.detectChanges();

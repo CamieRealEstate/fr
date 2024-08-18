@@ -1,27 +1,28 @@
 <!-- Top navigation -->
-<div class="header-container h-[10%] w-screen">
+<div class="header-container h-[10%]">
   <div class="h-full p-2 flex">
-    <button
-      *ngIf="isMobile"
-      class="align-middle px-2"
-      type="button"
-      (click)="toggleMenu()"
-    >
-      <mat-icon *ngIf="!isMenuOpen()">menu</mat-icon>
-      <mat-icon *ngIf="isMenuOpen()">arrow_back_ios</mat-icon>
-    </button>
     <img
-      src="logo.png"
-      class="h-[100%]"
+      src="logo-black.png"
+      class="h-[100%] cursor-pointer"
       routerLink="/"
       alt=""
     />
     <div *ngIf="!isMobile" class="flex justify-end px-3 w-full">
       @for (link of links; track link.name) {
         <a routerLink="{{link.route}}" [routerLinkActive]="['active-link']"
-           [routerLinkActiveOptions]="{exact: true}">{{ link.name | translate }}</a>
+        >{{ link.name | translate }}</a>
       }
-     <app-language></app-language>
+      <app-language></app-language>
+    </div>
+    <div *ngIf="isMobile" class="flex justify-end w-full">
+      <button
+        class="align-middle px-2"
+        type="button"
+        (click)="toggleMenu()"
+      >
+        <mat-icon *ngIf="!isMenuOpen()">menu</mat-icon>
+        <mat-icon *ngIf="isMenuOpen()">arrow_back_ios</mat-icon>
+      </button>
     </div>
   </div>
 </div>
@@ -32,7 +33,7 @@
   class="side-bar flex flex-col justify-between"
   [@fadeInOut]
 >
-  <ul>
+  <ul class="pt-2 text-xl">
     @for (link of links; track link.name) {
       <li>
         <a routerLink="{{link.route}}">{{ link.name | translate }}</a>

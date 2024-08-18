@@ -14,9 +14,6 @@ export const appRoutes: Route[] = [
     {
         path: 'listing',
         component: LayoutComponent,
-    },
-    {
-        path: 'listing/:id',
-        component: LayoutComponent,
+        pathMatch: 'full'
     }
 ];

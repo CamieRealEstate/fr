@@ -20,7 +20,8 @@
         *ngIf="true"
         [@quickFadeInLeft]
         class="flex h-[28dvh] w-full items-center justify-center"
-        routerLink="/listing/HN"
+        routerLink="/listing"
+        [queryParams]="{region: 'HN'}"
       >
         <article
           class="group relative aspect-video h-[28dvh] w-full cursor-pointer overflow-hidden rounded-xl shadow-md"
@@ -36,7 +37,8 @@
         *ngIf="true"
         [@fadeInLeft]
         class="flex h-[28dvh] w-full items-center justify-center"
-        routerLink="/listing/DN"
+        routerLink="/listing"
+        [queryParams]="{region: 'DN'}"
       >
         <article
           class="group relative aspect-video h-[28dvh] w-full cursor-pointer overflow-hidden rounded-xl shadow-md"
@@ -52,7 +54,8 @@
         *ngIf="true"
         [@slowFadeInLeft]
         class="flex h-[28dvh] w-full items-center justify-center"
-        routerLink="/listing/HCM"
+        routerLink="/listing"
+        [queryParams]="{region: 'HCM'}"
       >
         <article
           class="group relative aspect-video h-[28dvh] w-full cursor-pointer overflow-hidden rounded-xl shadow-md"
@@ -74,7 +77,8 @@
         *ngIf="true"
         [@quickFadeInTop]
         class="flex h-[28dvh] items-center justify-center"
-        routerLink="/listing/HN"
+        routerLink="/listing"
+        [queryParams]="{region: 'HN'}"
       >
         <article
           class="group relative aspect-video h-[28dvh] w-[32vw] cursor-pointer overflow-hidden rounded-xl shadow-md hover:shadow-2xl"
@@ -104,7 +108,8 @@
         *ngIf="true"
         [@fadeInTop]
         class="flex h-[28dvh] items-center justify-center"
-        routerLink="/listing/DN"
+        routerLink="/listing"
+        [queryParams]="{region: 'DN'}"
       >
         <article
           class="group relative aspect-video h-[28dvh] w-[32vw] cursor-pointer overflow-hidden rounded-xl shadow-md hover:shadow-2xl"
@@ -134,7 +139,8 @@
         *ngIf="true"
         [@slowFadeInTop]
         class="flex h-[28dvh] items-center justify-center"
-        routerLink="/listing/HCM"
+        routerLink="/listing"
+        [queryParams]="{region: 'HCM'}"
       >
         <article
           class="group relative aspect-video h-[28dvh] w-[32vw] cursor-pointer overflow-hidden rounded-xl shadow-md hover:shadow-2xl"
