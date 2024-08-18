@@ -1,3 +1,3 @@
-export * from './footer';
-export * from './header';
+export * from '../../@ui/footer';
+export * from '../../@ui/header';
 export * from './listing';

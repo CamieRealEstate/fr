@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ActivatedRoute } from '@angular/router';
 
-import { provideTranslate } from 'src/lib';
+import { provideTranslate } from 'src/lib/index';
 
 import { HeaderComponent } from './header.component';
 

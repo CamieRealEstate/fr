@@ -1,8 +1,5 @@
-import { Component, OnInit, signal } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { DEFAULT_REGION, KEY_REGION, ListItem } from './listing.entities';
-import { data } from './data/data';
 import {
   MatCard,
   MatCardActions,
@@ -15,23 +12,31 @@ import { MatChip, MatChipSet } from '@angular/material/chips';
 import { MatButton } from '@angular/material/button';
 import { RouterLink } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
+import { animate, style, transition, trigger } from '@angular/animations';
+import { MatIcon } from '@angular/material/icon';
+
+import { data, DEFAULT_REGION, KEY_REGION, ListItem } from '../../../../../lib';
 
 @Component({
   selector: 'app-listing',
   standalone: true,
-  imports: [CommonModule, MatCard, MatCardHeader, MatCardSubtitle, MatCardTitle, MatCardContent, MatCardActions, MatCardFooter, MatChipSet, MatChip, MatButton, MatCardImage, RouterLink, TranslateModule],
+  imports: [CommonModule, MatCard, MatCardHeader, MatCardSubtitle, MatCardTitle, MatCardContent, MatCardActions, MatCardFooter, MatChipSet, MatChip, MatButton, MatCardImage, RouterLink, TranslateModule, MatIcon],
   templateUrl: './listing.component.html',
-  styleUrl: './listing.component.scss'
+  styleUrl: './listing.component.scss',
+  animations:[
+    trigger('fadeInLeft', [
+      transition(':enter', [
+        style({ opacity: 0, transform: 'translateX(-30%)' }),
+        animate('400ms ease-out', style({ opacity: 1, transform: 'translateX(0)' })),
+      ]),
+    ])
+  ]
 })
-export class ListingComponent implements OnInit {
+export class ListingComponent {
   region = signal(new URLSearchParams(window.location.search).get(KEY_REGION) || DEFAULT_REGION);
-  listing: any = data[this.region()];
+  listing: ListItem[] = data[this.region()];
 
   isMobile(): boolean {
     return window.innerWidth < window.innerHeight;
-  }
-
-  ngOnInit() {
-    console.log('=>(listing.component.ts:17) listing', this.listing);
   }
 }

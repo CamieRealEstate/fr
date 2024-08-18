@@ -8,7 +8,7 @@ import { MatOption, MatSelect } from '@angular/material/select';
 import { trigger, transition, style, animate } from '@angular/animations';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
-import { LanguageComponent, DEFAULT_LANG, KEY_LANG, langs } from '../../../@ui';
+import { LanguageComponent, DEFAULT_LANG, KEY_LANG, langs } from '../index';
 
 import { links } from './header.entities';
 

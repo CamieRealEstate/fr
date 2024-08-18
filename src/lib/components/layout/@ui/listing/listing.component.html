@@ -1,160 +1,63 @@
-<div class="listing-container h-[90%]">
-  <div class="p-5 flex justify-center w-1/2">
-    @for (item of listing; track item.name) {
-      <ng-container *ngIf="isMobile(); else desktopView">
-        <div class="grid grid-cols-3 p-2 h-[30dvh] fixed top-[65dvh]">
-          <div
-            *ngIf="true"
-            [@quickFadeInLeft]
-            class="flex h-[28dvh] w-full items-center justify-center"
-            routerLink="/listing"
-            [queryParams]="{region: 'HN'}"
-          >
-            <article
-              class="group relative aspect-video h-[28dvh] w-full cursor-pointer overflow-hidden rounded-xl shadow-md"
-            >
-              <div class="p-2 flex justify-center w-full h-full border-b text-gray-400">
-                <h2>
-                  {{ 'Ha Noi' | translate }}
-                </h2>
-              </div>
-            </article>
-          </div>
-          <div
-            *ngIf="true"
-            [@fadeInLeft]
-            class="flex h-[28dvh] w-full items-center justify-center"
-            routerLink="/listing"
-            [queryParams]="{region: 'DN'}"
-          >
-            <article
-              class="group relative aspect-video h-[28dvh] w-full cursor-pointer overflow-hidden rounded-xl shadow-md"
-            >
-              <div class="p-2 flex justify-center w-full h-full border-t text-gray-400">
-                <h2>
-                  {{ 'Da Nang' | translate }}
-                </h2>
-              </div>
-            </article>
-          </div>
-          <div
-            *ngIf="true"
-            [@slowFadeInLeft]
-            class="flex h-[28dvh] w-full items-center justify-center"
-            routerLink="/listing"
-            [queryParams]="{region: 'HCM'}"
-          >
-            <article
-              class="group relative aspect-video h-[28dvh] w-full cursor-pointer overflow-hidden rounded-xl shadow-md"
-            >
-              <div class="p-2 flex justify-center w-full h-full border-l text-gray-400">
-                <h2>
-                  {{ 'Ho Chi Minh' | translate }}
-                </h2>
-              </div>
-            </article>
-          </div>
-        </div>
-      </ng-container>
-      <ng-template #desktopView>
-        <div
-          class="grid grid-cols-3 h-[30dvh] w-[60vw] px-1 fixed top-[60dvh] right-[20vw]"
+<div class="listing-container h-[90%] grid lg:grid-cols-2 mx-5">
+  @for (item of listing; track item.id) {
+    <div
+      class="h-[45dvh] w-[90vw] lg:w-full pt-3 px-2 text-white"
+    >
+      <div
+        *ngIf="true"
+        class="w-full"
+        [@fadeInLeft]
+        routerLink="/listing/detail"
+        [queryParams]="{item: item.id, region: this.region()}"
+      >
+        <article
+          class="group relative aspect-video h-[42dvh] w-full cursor-pointer overflow-hidden rounded-xl shadow-md hover:shadow-2xl"
         >
+          <img
+            class="absolute inset-0 w-full h-[42dvh] object-cover opacity-90 transition-opacity duration-300 ease-out group-hover:opacity-100 group-hover:transition-opacity group-hover:duration-300"
+            src="/fr/regions/HN-m.jpg"
+            alt=""
+          />
           <div
-            *ngIf="true"
-            [@quickFadeInTop]
-            class="flex h-[28dvh] items-center justify-center"
-            routerLink="/listing"
-            [queryParams]="{region: 'HN'}"
+            *ngIf="!isMobile()"
+            class="absolute inset-0 bg-gradient-to-t from-black/0 to-transparent to-95% transition-all duration-300 group-hover:bg-gradient-to-t group-hover:from-black/60 group-hover:transition-all group-hover:duration-1000 group-hover:border-r group-hover:border-b"
           >
-            <article
-              class="group relative aspect-video h-[28dvh] w-[32vw] cursor-pointer overflow-hidden rounded-xl shadow-md hover:shadow-2xl"
+            <h2
+              class="absolute bottom-8 left-5 lg:left-8 m-0 text-2xl transition-all delay-300 duration-100 ease-out group-hover:bottom-[60%] group-hover:delay-0 group-hover:duration-300"
             >
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-black/0 to-transparent to-90% text-white transition-all duration-300 group-hover:bg-gradient-to-t group-hover:from-black/60 group-hover:transition-all group-hover:duration-1000 group-hover:border-r group-hover:border-b"
-              >
-                <h2
-                  class="w-[14vw] text-center absolute bottom-8 left-8 m-0 text-2xl transition-all delay-300 duration-100 ease-out group-hover:bottom-3/4 group-hover:delay-0 group-hover:duration-300"
-                >
-                  {{ 'Ha Noi' | translate }}
-                </h2>
-                <p
-                  class="absolute left-8 top-[20%] line-clamp-3 max-w-[80%] pt-4 opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-100 group-hover:delay-200 group-hover:duration-300"
-                >
-                  {{ 'Ha Noi desc' | translate }}
-                </p>
-                <a
-                  class="w-[14vw] text-center absolute bottom-8 left-8 max-w-[80%] rounded-lg border px-4 py-2 opacity-0 transition-opacity ease-out group-hover:opacity-100 group-hover:transition-opacity group-hover:delay-300 group-hover:duration-300"
-                >
-                  {{ 'More' | translate }}
-                </a>
-              </div>
-            </article>
+              {{ item.name || '' | translate }}
+            </h2>
+            <div
+              class="absolute left-5 lg:left-8 top-[40%] max-w-[85%] opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-100 group-hover:delay-200 group-hover:duration-300"
+            >
+              <div class="line-clamp-3">{{ item.detail || '' | translate }}</div>
+              <div class="italic"> *{{ item.info?.type || '' | translate }}</div>
+            </div>
+            <a
+              class="w-[14vw] text-center absolute bottom-8 left-8 max-w-[85%] rounded-lg border px-4 py-2 opacity-0 transition-opacity ease-out group-hover:opacity-100 group-hover:transition-opacity group-hover:delay-300 group-hover:duration-300"
+            >
+              {{ 'More' | translate }}
+            </a>
           </div>
           <div
-            *ngIf="true"
-            [@fadeInTop]
-            class="flex h-[28dvh] items-center justify-center"
-            routerLink="/listing"
-            [queryParams]="{region: 'DN'}"
+            *ngIf="item?.state"
+            class="text-gray-700 text-2xl absolute left-5 lg:left-8 mt-4 opacity-100 transition-opacity duration-250 ease-out group-hover:opacity-50 group-hover:duration-250"
           >
-            <article
-              class="group relative aspect-video h-[28dvh] w-[32vw] cursor-pointer overflow-hidden rounded-xl shadow-md hover:shadow-2xl"
-            >
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-black/0 to-transparent to-90% text-white transition-all duration-300 group-hover:bg-gradient-to-t group-hover:from-black/60 group-hover:transition-all group-hover:duration-500 group-hover:border-t"
-              >
-                <h2
-                  class="w-[14vw] text-center absolute bottom-8 left-8 m-0 text-2xl transition-all delay-300 duration-100 ease-out group-hover:bottom-3/4 group-hover:delay-0 group-hover:duration-300"
-                >
-                  {{ 'Da Nang' | translate }}
-                </h2>
-                <p
-                  class="absolute left-8 top-[20%] line-clamp-3 max-w-[80%] pt-4 opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-100 group-hover:delay-200 group-hover:duration-300"
-                >
-                  {{ 'Da Nang desc' | translate }}
-                </p>
-                <a
-                  class="w-[14vw] text-center absolute bottom-8 left-8 max-w-[80%] rounded-lg border px-4 py-2 opacity-0 transition-opacity ease-out group-hover:opacity-100 group-hover:transition-opacity group-hover:delay-300 group-hover:duration-300"
-                >
-                  {{ 'More' | translate }}
-                </a>
-              </div>
-            </article>
+            <mat-icon>bookmark</mat-icon>
           </div>
           <div
-            *ngIf="true"
-            [@slowFadeInTop]
-            class="flex h-[28dvh] items-center justify-center"
-            routerLink="/listing"
-            [queryParams]="{region: 'HCM'}"
+            class="absolute left-5 lg:left-8 top-[63%] max-w-[85%] pt-4 opacity-100 transition-opacity duration-300 ease-out group-hover:opacity-0 group-hover:duration-300 text-black"
           >
-            <article
-              class="group relative aspect-video h-[28dvh] w-[32vw] cursor-pointer overflow-hidden rounded-xl shadow-md hover:shadow-2xl"
-            >
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-black/0 to-transparent to-90% text-white transition-all duration-300 group-hover:bg-gradient-to-t group-hover:from-black/60 group-hover:transition-all group-hover:duration-500 group-hover:border-l group-hover:border-b"
-              >
-                <h2
-                  class="w-[14vw] text-center absolute bottom-8 left-8 m-0 text-2xl transition-all delay-300 duration-100 ease-out group-hover:bottom-3/4 group-hover:delay-0 group-hover:duration-300"
-                >
-                  {{ 'Ho Chi Minh' | translate }}
-                </h2>
-                <p
-                  class="absolute left-8 top-[20%] line-clamp-3 max-w-[80%] pt-4 opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-100 group-hover:delay-200 group-hover:duration-300"
-                >
-                  {{ 'Ho Chi Minh desc' | translate }}
-                </p>
-                <a
-                  class="w-[14vw] text-center absolute bottom-8 left-8 max-w-[80%] rounded-lg border px-4 py-2 opacity-0 transition-opacity ease-out group-hover:opacity-100 group-hover:transition-opacity group-hover:delay-300 group-hover:duration-300"
-                >
-                  {{ 'More' | translate }}
-                </a>
-              </div>
-            </article>
+            <div class="font-semibold text-xl"> {{ item.name }}</div>
+            <div *ngIf="true">
+              {{ item.address }}
+            </div>
+            <div>
+              {{ item.info?.averageAreaOfUnit }}
+            </div>
           </div>
-        </div>
-      </ng-template>
-    }
-  </div>
+        </article>
+      </div>
+    </div>
+  }
 </div>
