@@ -1,13 +1,17 @@
 {
   "About": "About",
+  "Apartment": "Apartment",
   "Da Nang desc": "In summary, Hanoi is a city that seamlessly blends its ancient past with a vibrant present, offering visitors a rich tapestry of cultural experiences, historical landmarks, and delicious cuisine. Whether exploring its colonial architecture, tasting its famous dishes, or immersing oneself in its lively markets and arts scene, Hanoi promises an unforgettable journey through the heart of Vietnam.",
   "Da Nang": "DA NANG",
   "Ha Noi desc": "In summary, Hanoi is a city that seamlessly blends its ancient past with a vibrant present, offering visitors a rich tapestry of cultural experiences, historical landmarks, and delicious cuisine. Whether exploring its colonial architecture, tasting its famous dishes, or immersing oneself in its lively markets and arts scene, Hanoi promises an unforgettable journey through the heart of Vietnam.",
   "Ha Noi": "HA NOI",
+  "HN-1-details": "In summary, Hanoi is a city that seamlessly blends its ancient past with a vibrant present, offering visitors a rich tapestry of cultural experiences, historical landmarks, and delicious cuisine. Whether exploring its colonial architecture, tasting its famous dishes, or immersing oneself in its lively markets and arts scene, Hanoi promises an unforgettable journey through the heart of Vietnam.",
   "Ho Chi Minh desc": "In summary, Hanoi is a city that seamlessly blends its ancient past with a vibrant present, offering visitors a rich tapestry of cultural experiences, historical landmarks, and delicious cuisine. Whether exploring its colonial architecture, tasting its famous dishes, or immersing oneself in its lively markets and arts scene, Hanoi promises an unforgettable journey through the heart of Vietnam.",
   "Ho Chi Minh": "HO CHI MINH",
   "Home": "Home",
   "Language": "Language",
+  "Listing" : "Listing",
   "More": "Find out more",
+  "productInfo": "Product {{name}} last information, updated date {{currentDate}} from Camie",
   "Regions": "Select Region"
 }
