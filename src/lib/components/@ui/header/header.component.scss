@@ -1,9 +1,10 @@
 .side-bar {
   color: white;
+  bottom: 0;
   background: rgba(26, 27, 31, 0.9);
   width: 100vw;
-  height: 90dvh;
-  position: absolute;
+  height: 100dvh;
+  position: fixed;
   z-index: 999;
 
   li {
@@ -18,11 +19,12 @@
 }
 
 .header-container {
+  --mdc-filled-text-field-container-color: #ffffff;
+
   .mdc-line-ripple {
     display: none;
   }
 
-  --mdc-filled-text-field-container-color: #ffffff;
 
   a {
     margin: 1rem;

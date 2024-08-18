@@ -9,10 +9,7 @@
     />
     <div *ngIf="!isMobile" class="flex justify-end px-3 w-full">
       @for (link of links; track link.name) {
-      <a
-        routerLink="{{ link.route }}"
-        [routerLinkActive]="['active-link']"
-      >
+      <a routerLink="{{ link.route }}" [routerLinkActive]="['active-link']">
         {{ link.name | translate }}
       </a>
       }
@@ -28,30 +25,43 @@
 </div>
 
 <!-- Mobile side bar -->
-<div
-  *ngIf="isMenuOpen()"
-  class="side-bar flex flex-col justify-between"
-  [@fadeInOut]
->
-  <ul class="pt-2 text-xl">
-    @for (link of links; track link.name) {
-    <li>
-      <a routerLink="{{ link.route }}">{{ link.name | translate }}</a>
-    </li>
-    }
-  </ul>
-  <mat-form-field>
-    <mat-label>{{ 'Language' | translate }}</mat-label>
-    <mat-select
-      [(ngModel)]="lang"
-      (selectionChange)="changeLanguage($event.value)"
+<div *ngIf="isMenuOpen()" class="side-bar" [@fadeInOut]>
+  <div class="p-2 flex h-[10%] w-full bg-white justify-between">
+    <img
+      src="logo-black.png"
+      class="h-full px-[5%] cursor-pointer"
+      routerLink="/"
+      alt=""
+    />
+    <button
+      class="px-4 text-black relative"
+      type="button"
+      (click)="toggleMenu()"
     >
-      @for (lang of langs; track lang.code) {
-      <mat-option [value]="lang.code">
-        <img class="h-8 inline" src="{{ lang.icon }}" alt="" />
-        {{ lang.name }}
-      </mat-option>
+      <mat-icon *ngIf="isMenuOpen()">arrow_back_ios</mat-icon>
+    </button>
+  </div>
+  <div class="h-full flex flex-col justify-between">
+    <ul class="pt-2 text-xl">
+      @for (link of links; track link.name) {
+      <li>
+        <a routerLink="{{ link.route }}">{{ link.name | translate }}</a>
+      </li>
       }
-    </mat-select>
-  </mat-form-field>
+    </ul>
+    <mat-form-field>
+      <mat-label>{{ 'Language' | translate }}</mat-label>
+      <mat-select
+        [(ngModel)]="lang"
+        (selectionChange)="changeLanguage($event.value)"
+      >
+        @for (lang of langs; track lang.code) {
+        <mat-option [value]="lang.code">
+          <img class="h-8 inline" src="{{ lang.icon }}" alt="" />
+          {{ lang.name }}
+        </mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+  </div>
 </div>
