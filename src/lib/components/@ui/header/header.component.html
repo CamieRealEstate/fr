@@ -17,8 +17,7 @@
     </div>
     <div *ngIf="isMobile" class="flex justify-end w-full">
       <button class="align-middle px-2" type="button" (click)="toggleMenu()">
-        <mat-icon *ngIf="!isMenuOpen()">menu</mat-icon>
-        <mat-icon *ngIf="isMenuOpen()">arrow_back_ios</mat-icon>
+        <mat-icon>menu</mat-icon>
       </button>
     </div>
   </div>
@@ -38,10 +37,10 @@
       type="button"
       (click)="toggleMenu()"
     >
-      <mat-icon *ngIf="isMenuOpen()">arrow_back_ios</mat-icon>
+      <mat-icon>arrow_back_ios</mat-icon>
     </button>
   </div>
-  <div class="h-full flex flex-col justify-between">
+  <div class="h-[89dvh] flex flex-col justify-between">
     <ul class="pt-2 text-xl">
       @for (link of links; track link.name) {
       <li>
