@@ -7,12 +7,13 @@ import { data, DEFAULT_REGION, KEY_REGION, HeaderComponent, ListItem, Layout } f
 
 import { KEY_ITEM } from './detail.entities';
 import { trigger, transition, style, animate } from '@angular/animations';
-import { MatButton } from '@angular/material/button';
+import { MatButton, MatFabButton, MatMiniFabButton } from '@angular/material/button';
+import { MatTooltip } from '@angular/material/tooltip';
 
 @Component({
   selector: 'app-detail',
   standalone: true,
-  imports: [CommonModule, HeaderComponent, TranslateModule, NgOptimizedImage, MatIcon, MatButton],
+  imports: [CommonModule, HeaderComponent, TranslateModule, NgOptimizedImage, MatIcon, MatButton, MatFabButton, MatMiniFabButton, MatTooltip],
   templateUrl: './detail.component.html',
   styleUrl: './detail.component.scss',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -46,5 +47,9 @@ export class DetailComponent {
 
   toggleDetailVisibility() {
     this.showDetail = !this.showDetail;
+  }
+
+  goTop() {
+    window.scrollTo({top: 0, behavior: 'smooth'});
   }
 }

@@ -54,18 +54,19 @@ export const data: Data = {
     {
       id: 0,
       name: 'dumaland',
+      brochureUrl: 'http://google.com',
       state: 'Hot',
       detail: 'HN-1-details',
       descriptions: [
-        { imgDesc: 'Desc 1', imgUrl: 'cat.jpg'},
-        { imgDesc: 'Desc 2', imgUrl: 'cat.jpg'},
-        { imgDesc: 'Desc 3', imgUrl: 'cat.jpg'},
+        { imgDesc: 'Desc 1', imgUrl: 'cat.jpg' },
+        { imgDesc: 'Desc 2', imgUrl: 'cat.jpg' },
+        { imgDesc: 'Desc 3', imgUrl: 'cat.jpg' }
       ],
       address: '668 Lê Đức Thọ, Gò Vấp',
       locationImgUrl: 'cat.jpg',
       layouts: [
-        { imgDesc: 'Typical floor plan', imgUrl: 'cat.jpg'},
-        { imgDesc: 'Penhouse floor plan', imgUrl: 'cat.jpg  '}
+        { imgDesc: 'Typical floor plan', imgUrl: 'cat.jpg' },
+        { imgDesc: 'Penhouse floor plan', imgUrl: 'cat.jpg  ' }
       ],
       info: {
         area: '69 hectors',
@@ -78,161 +79,15 @@ export const data: Data = {
         numberOfUnit: 5678,
         startingPrice: 3,
         towers: 3,
-        type: ['Apartment','Villa'],
+        type: ['Apartment', 'Villa']
       },
-      imgUrls:[
-        { id: 1, url: 'cat.jpg'},
-        { id: 2, url: 'cat-2.jpg'},
-        { id: 3, url: 'cat-3.jpg'},
+      imgUrls: [
+        { id: 1, url: 'cat.jpg' },
+        { id: 2, url: 'cat-2.jpg' },
+        { id: 3, url: 'cat-3.jpg' }
       ]
-    },
-    {
-      id: 1,
-      name: 'dumami',
-      detail: 'HN-1-details',
-      address: '668 Lê Đức Thọ, Gò Vấp',
-      info: {
-        averageAreaOfUnit: '37 hectors',
-      }
-    },
-    {
-      id: 2,
-      name: 'dumami',
-      detail: 'HN-1-details',
-      address: '668 Lê Đức Thọ, Gò Vấp',
-      info: {
-        averageAreaOfUnit: '37 hectors',
-      }
-    },
-    {
-      id: 3,
-      name: 'dumami',
-      detail: 'HN-1-details',
-      address: '668 Lê Đức Thọ, Gò Vấp',
-      info: {
-        averageAreaOfUnit: '37 hectors'
-      }
-    },
-    {
-      id: 4,
-      name: 'dumami',
-      detail: 'HN-1-details',
-      address: '668 Lê Đức Thọ, Gò Vấp',
-      info: {
-        averageAreaOfUnit: '37 hectors'
-      }
-    },
-    {
-      id: 5,
-      name: 'dumami',
-      address: '668 Lê Đức Thọ, Gò Vấp',
-      info: {
-        averageAreaOfUnit: '37 hectors'
-      }
     }
   ],
-  DN: [
-    {
-      id: 0,
-      name: 'dumaland',
-      state: 'Hot',
-      detail: 'HN-1-details',
-      address: '668 Lê Đức Thọ, Gò Vấp',
-      info: {
-        averageAreaOfUnit: '37 hectors'
-      }
-    },
-    {
-      id: 1,
-      name: 'dumami',
-      address: '668 Lê Đức Thọ, Gò Vấp',
-      info: {
-        averageAreaOfUnit: '37 hectors'
-      }
-    },
-    {
-      id: 2,
-      name: 'dumami',
-      address: '668 Lê Đức Thọ, Gò Vấp',
-      info: {
-        averageAreaOfUnit: '37 hectors'
-      }
-    },
-    {
-      id: 3,
-      name: 'dumami',
-      address: '668 Lê Đức Thọ, Gò Vấp',
-      info: {
-        averageAreaOfUnit: '37 hectors'
-      }
-    },
-    {
-      id: 4,
-      name: 'dumami',
-      address: '668 Lê Đức Thọ, Gò Vấp',
-      info: {
-        averageAreaOfUnit: '37 hectors'
-      }
-    },
-    {
-      id: 5,
-      name: 'dumami',
-      address: '668 Lê Đức Thọ, Gò Vấp',
-      info: {
-        averageAreaOfUnit: '37 hectors'
-      }
-    }
-  ],
-  HCM: [
-    {
-      id: 0,
-      name: 'dumaland',
-      state: 'Hot',
-      detail: 'HN-1-details',
-      address: '668 Lê Đức Thọ, Gò Vấp',
-      info: {
-        averageAreaOfUnit: '37 hectors'
-      }
-    },
-    {
-      id: 1,
-      name: 'dumami',
-      address: '668 Lê Đức Thọ, Gò Vấp',
-      info: {
-        averageAreaOfUnit: '37 hectors'
-      }
-    },
-    {
-      id: 2,
-      name: 'dumami',
-      address: '668 Lê Đức Thọ, Gò Vấp',
-      info: {
-        averageAreaOfUnit: '37 hectors'
-      }
-    },
-    {
-      id: 3,
-      name: 'dumami',
-      address: '668 Lê Đức Thọ, Gò Vấp',
-      info: {
-        averageAreaOfUnit: '37 hectors'
-      }
-    },
-    {
-      id: 4,
-      name: 'dumami',
-      address: '668 Lê Đức Thọ, Gò Vấp',
-      info: {
-        averageAreaOfUnit: '37 hectors'
-      }
-    },
-    {
-      id: 5,
-      name: 'dumami',
-      address: '668 Lê Đức Thọ, Gò Vấp',
-      info: {
-        averageAreaOfUnit: '37 hectors'
-      }
-    }
-  ]
+  DN: [],
+  HCM: []
 };
