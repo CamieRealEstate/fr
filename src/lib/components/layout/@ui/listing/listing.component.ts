@@ -17,7 +17,7 @@ import { animate, style, transition, trigger } from '@angular/animations';
 import { MatIcon } from '@angular/material/icon';
 import { TranslateModule } from '@ngx-translate/core';
 
-import { data, KEY_REGION, ListItem } from '../../../../../lib';
+import { data, DEFAULT_REGION, KEY_REGION, ListItem } from '../../../../../lib';
 
 @Component({
   selector: 'app-listing',
@@ -47,4 +47,6 @@ export class ListingComponent {
   goTop() {
     window.scrollTo({top: 0, behavior: 'smooth'});
   }
+
+  protected readonly DEFAULT_REGION = DEFAULT_REGION;
 }

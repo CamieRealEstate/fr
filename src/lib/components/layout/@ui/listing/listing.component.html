@@ -4,11 +4,11 @@
       class="h-[45dvh] w-[90vw] lg:w-full pt-3 px-2 text-white"
     >
       <div
-        *ngIf="true"
         class="w-full"
+        *ngIf="true"
         [@fadeInLeft]
         routerLink="/listing/detail"
-        [queryParams]="{item: item.id, region: this.region()}"
+        [queryParams]="{item: item.id, region: this.region() || DEFAULT_REGION }"
       >
         <article
           class="group relative aspect-video h-[42dvh] w-full cursor-pointer overflow-hidden rounded-xl shadow-md hover:shadow-2xl"

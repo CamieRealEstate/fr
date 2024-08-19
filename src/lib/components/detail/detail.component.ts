@@ -26,6 +26,18 @@ import { MatTooltip } from '@angular/material/tooltip';
       transition(':leave', [
         animate('300ms ease-in', style({ transform: 'translateY(-10%)', opacity: 0 }))
       ])
+    ]),
+    trigger('fadeInTopFast', [
+      transition(':enter', [
+        style({ opacity: 0, transform: 'translateY(-5%)' }),
+        animate('400ms ease-out', style({ opacity: 1, transform: 'translateY(0)' })),
+      ]),
+    ]),
+    trigger('fadeInTopSlow', [
+      transition(':enter', [
+        style({ opacity: 0, transform: 'translateY(-5%)' }),
+        animate('600ms ease-out', style({ opacity: 1, transform: 'translateY(0)' })),
+      ]),
     ])
   ]
 })
