@@ -12,6 +12,6 @@
   "Language": "Ngôn ngữ",
   "Listing": "Danh sách sản phẩm",
   "More": "Tìm hiểu thêm",
-  "productInfo": "Product {{name}} last information, updated date {{currentDate}} from Camie",
+  "productInfo": "Thông tin dự án {{name}}, cập nhật {{currentDate}} bởi Camie",
   "Regions": "Chọn miền"
 }

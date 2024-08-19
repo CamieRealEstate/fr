@@ -11,7 +11,7 @@ import {
   MatCardTitle
 } from '@angular/material/card';
 import { MatChip, MatChipSet } from '@angular/material/chips';
-import { MatButton } from '@angular/material/button';
+import { MatMiniFabButton } from '@angular/material/button';
 import { RouterLink } from '@angular/router';
 import { animate, style, transition, trigger } from '@angular/animations';
 import { MatIcon } from '@angular/material/icon';
@@ -22,7 +22,7 @@ import { data, KEY_REGION, ListItem } from '../../../../../lib';
 @Component({
   selector: 'app-listing',
   standalone: true,
-  imports: [CommonModule, MatCard, MatCardHeader, MatCardSubtitle, MatCardTitle, MatCardContent, MatCardActions, MatCardFooter, MatChipSet, MatChip, MatButton, MatCardImage, RouterLink, TranslateModule, MatIcon, NgOptimizedImage],
+  imports: [CommonModule, MatCard, MatCardHeader, MatCardSubtitle, MatCardTitle, MatCardContent, MatCardActions, MatCardFooter, MatChipSet, MatChip, MatCardImage, RouterLink, TranslateModule, MatIcon, NgOptimizedImage, MatMiniFabButton],
   templateUrl: './listing.component.html',
   styleUrl: './listing.component.scss',
   animations:[
@@ -42,5 +42,9 @@ export class ListingComponent {
 
   isMobile(): boolean {
     return window.innerWidth < window.innerHeight;
+  }
+  
+  goTop() {
+    window.scrollTo({top: 0, behavior: 'smooth'});
   }
 }
