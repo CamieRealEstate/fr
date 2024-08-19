@@ -25,7 +25,7 @@ export interface ListItem {
   layouts?: Layout[];
   facilities?: string[];
   tags?: string[];
-  logo?: string;
+  logoUrl?: string;
   descriptions?: string[];
   images?: string[];
   brochureUrl?: string;

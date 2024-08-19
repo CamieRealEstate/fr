@@ -1,26 +1,28 @@
 import { Component, signal } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import {
   MatCard,
   MatCardActions,
   MatCardContent,
   MatCardFooter,
   MatCardHeader,
-  MatCardImage, MatCardSubtitle, MatCardTitle
+  MatCardImage,
+  MatCardSubtitle,
+  MatCardTitle
 } from '@angular/material/card';
 import { MatChip, MatChipSet } from '@angular/material/chips';
 import { MatButton } from '@angular/material/button';
 import { RouterLink } from '@angular/router';
-import { TranslateModule } from '@ngx-translate/core';
 import { animate, style, transition, trigger } from '@angular/animations';
 import { MatIcon } from '@angular/material/icon';
+import { TranslateModule } from '@ngx-translate/core';
 
-import { data, DEFAULT_REGION, KEY_REGION, ListItem } from '../../../../../lib';
+import { data, KEY_REGION, ListItem } from '../../../../../lib';
 
 @Component({
   selector: 'app-listing',
   standalone: true,
-  imports: [CommonModule, MatCard, MatCardHeader, MatCardSubtitle, MatCardTitle, MatCardContent, MatCardActions, MatCardFooter, MatChipSet, MatChip, MatButton, MatCardImage, RouterLink, TranslateModule, MatIcon],
+  imports: [CommonModule, MatCard, MatCardHeader, MatCardSubtitle, MatCardTitle, MatCardContent, MatCardActions, MatCardFooter, MatChipSet, MatChip, MatButton, MatCardImage, RouterLink, TranslateModule, MatIcon, NgOptimizedImage],
   templateUrl: './listing.component.html',
   styleUrl: './listing.component.scss',
   animations:[
@@ -33,8 +35,10 @@ import { data, DEFAULT_REGION, KEY_REGION, ListItem } from '../../../../../lib';
   ]
 })
 export class ListingComponent {
-  region = signal(new URLSearchParams(window.location.search).get(KEY_REGION) || DEFAULT_REGION);
-  listing: ListItem[] = data[this.region()];
+  region = signal(new URLSearchParams(window.location.search).get(KEY_REGION));
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-expect-error
+  listing: ListItem[] = this.region() ? data[this.region()] : Object.values(data).flat();
 
   isMobile(): boolean {
     return window.innerWidth < window.innerHeight;

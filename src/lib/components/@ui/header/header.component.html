@@ -44,7 +44,7 @@
     <ul class="pt-2 text-xl">
       @for (link of links; track link.name) {
       <li>
-        <a routerLink="{{ link.route }}">{{ link.name | translate }}</a>
+        <a routerLink="{{ link.route }}" [routerLinkActive]="['active-link-mobile']">{{ link.name | translate }}</a>
       </li>
       }
     </ul>
