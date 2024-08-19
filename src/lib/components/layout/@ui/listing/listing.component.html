@@ -33,7 +33,11 @@
               class="absolute left-5 lg:left-8 top-[40%] max-w-[85%] opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-100 group-hover:delay-200 group-hover:duration-300"
             >
               <div class="line-clamp-3">{{ item.detail || '' | translate }}</div>
-              <div class="italic"> *{{ item.info?.type || '' | translate }}</div>
+              <div class="italic">
+                @for (type of item.info?.type; track type) {
+                  {{ type | translate }},
+                }
+              </div>
             </div>
             <a
               class="w-[14vw] text-center absolute bottom-8 left-8 max-w-[85%] rounded-lg border px-4 py-2 opacity-0 transition-opacity ease-out group-hover:opacity-100 group-hover:transition-opacity group-hover:delay-300 group-hover:duration-300"

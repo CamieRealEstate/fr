@@ -1,17 +1,32 @@
-import { Component, signal } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, signal } from '@angular/core';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
+import { MatIcon } from '@angular/material/icon';
+import { TranslateModule } from '@ngx-translate/core';
 
-import { data, DEFAULT_REGION, KEY_REGION, HeaderComponent, ListItem } from '../../../lib';
+import { data, DEFAULT_REGION, KEY_REGION, HeaderComponent, ListItem, Layout } from '../../../lib';
 
 import { KEY_ITEM } from './detail.entities';
-import { TranslateModule } from '@ngx-translate/core';
+import { trigger, transition, style, animate } from '@angular/animations';
+import { MatButton } from '@angular/material/button';
 
 @Component({
   selector: 'app-detail',
   standalone: true,
-  imports: [CommonModule, HeaderComponent, TranslateModule],
+  imports: [CommonModule, HeaderComponent, TranslateModule, NgOptimizedImage, MatIcon, MatButton],
   templateUrl: './detail.component.html',
-  styleUrl: './detail.component.scss'
+  styleUrl: './detail.component.scss',
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  animations: [
+    trigger('slideDown', [
+      transition(':enter', [
+        style({ transform: 'translateY(-20%)', opacity: 0 }),
+        animate('500ms ease-out', style({ transform: 'translateY(0)', opacity: 1 }))
+      ]),
+      transition(':leave', [
+        animate('300ms ease-in', style({ transform: 'translateY(-10%)', opacity: 0 }))
+      ])
+    ])
+  ]
 })
 export class DetailComponent {
   item = signal(new URLSearchParams(window.location.search).get(KEY_ITEM));
@@ -19,4 +34,17 @@ export class DetailComponent {
 
   data: ListItem = data[this.region()].find(item => item.id.toString() === this.item()) || { id: 0 };
   currentDate = new Date().toLocaleDateString();
+  showDetail = false;
+
+  get buttonText(): string {
+    return this.showDetail ? 'Hide' : 'Show more';
+  }
+
+  toggleImageVisibility(img: Layout) {
+    img.imgVisible = !img.imgVisible;
+  }
+
+  toggleDetailVisibility() {
+    this.showDetail = !this.showDetail;
+  }
 }
