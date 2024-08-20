@@ -3,7 +3,7 @@ import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { MatIcon } from '@angular/material/icon';
 import { TranslateModule } from '@ngx-translate/core';
 
-import { data, DEFAULT_REGION, KEY_REGION, HeaderComponent, ListItem, Layout } from '../../../lib';
+import { data, DEFAULT_REGION, KEY_REGION, HeaderComponent, ListItem, Layout, FooterComponent } from '../../../lib';
 
 import { KEY_ITEM } from './detail.entities';
 import { trigger, transition, style, animate } from '@angular/animations';
@@ -13,7 +13,7 @@ import { MatTooltip } from '@angular/material/tooltip';
 @Component({
   selector: 'app-detail',
   standalone: true,
-  imports: [CommonModule, HeaderComponent, TranslateModule, NgOptimizedImage, MatIcon, MatButton, MatFabButton, MatMiniFabButton, MatTooltip],
+  imports: [CommonModule, HeaderComponent, TranslateModule, NgOptimizedImage, MatIcon, MatButton, MatFabButton, MatMiniFabButton, MatTooltip, FooterComponent],
   templateUrl: './detail.component.html',
   styleUrl: './detail.component.scss',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
