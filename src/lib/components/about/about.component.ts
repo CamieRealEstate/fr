@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HeaderComponent } from '../layout';
+import { FooterComponent, HeaderComponent } from '../layout';
 
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [CommonModule, HeaderComponent],
+  imports: [CommonModule, HeaderComponent, FooterComponent],
   templateUrl: './about.component.html',
   styleUrl: './about.component.scss',
 })
