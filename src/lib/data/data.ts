@@ -56,6 +56,7 @@ export const data: Data = {
       name: 'lỏdland',
       state: 'Hot',
       detail: 'HN-1-details',
+      logoUrl: 'cat-2.jpg',
       brochureUrl: 'http://google.com',
       descriptions: [
         { imgDesc: 'Desc 1', imgUrl: 'cat.jpg'},
@@ -92,6 +93,7 @@ export const data: Data = {
       name: 'lỏdland',
       state: 'Hot',
       detail: 'HN-1-details',
+      logoUrl: 'cat-2.jpg',
       brochureUrl: 'http://google.com',
       descriptions: [
         { imgDesc: 'Desc 1', imgUrl: 'cat.jpg'},
@@ -128,6 +130,7 @@ export const data: Data = {
       name: 'lỏdland',
       state: 'Hot',
       detail: 'HN-1-details',
+      logoUrl: 'cat-2.jpg',
       brochureUrl: 'http://google.com',
       descriptions: [
         { imgDesc: 'Desc 1', imgUrl: 'cat.jpg'},
@@ -164,6 +167,7 @@ export const data: Data = {
       name: 'lỏdland',
       state: 'Hot',
       detail: 'HN-1-details',
+      logoUrl: 'cat-2.jpg',
       brochureUrl: 'http://google.com',
       descriptions: [
         { imgDesc: 'Desc 1', imgUrl: 'cat.jpg'},
@@ -202,6 +206,7 @@ export const data: Data = {
       name: 'lỏdland',
       state: 'Hot',
       detail: 'HN-1-details',
+      logoUrl: 'cat-2.jpg',
       brochureUrl: 'http://google.com',
       descriptions: [
         { imgDesc: 'Desc 1', imgUrl: 'cat.jpg'},
@@ -238,6 +243,7 @@ export const data: Data = {
       name: 'lỏdland',
       state: 'Hot',
       detail: 'HN-1-details',
+      logoUrl: 'cat-2.jpg',
       brochureUrl: 'http://google.com',
       descriptions: [
         { imgDesc: 'Desc 1', imgUrl: 'cat.jpg'},
@@ -274,6 +280,7 @@ export const data: Data = {
       name: 'lỏdland',
       state: 'Hot',
       detail: 'HN-1-details',
+      logoUrl: 'cat-2.jpg',
       brochureUrl: 'http://google.com',
       descriptions: [
         { imgDesc: 'Desc 1', imgUrl: 'cat.jpg'},
@@ -310,6 +317,7 @@ export const data: Data = {
       name: 'lỏdland',
       state: 'Hot',
       detail: 'HN-1-details',
+      logoUrl: 'cat-2.jpg',
       brochureUrl: 'http://google.com',
       descriptions: [
         { imgDesc: 'Desc 1', imgUrl: 'cat.jpg'},
@@ -348,6 +356,7 @@ export const data: Data = {
       name: 'lỏdland',
       state: 'Hot',
       detail: 'HN-1-details',
+      logoUrl: 'cat-2.jpg',
       brochureUrl: 'http://google.com',
       descriptions: [
         { imgDesc: 'Desc 1', imgUrl: 'cat.jpg'},
@@ -384,6 +393,7 @@ export const data: Data = {
       name: 'lỏdland',
       state: 'Hot',
       detail: 'HN-1-details',
+      logoUrl: 'cat-2.jpg',
       brochureUrl: 'http://google.com',
       descriptions: [
         { imgDesc: 'Desc 1', imgUrl: 'cat.jpg'},
@@ -420,6 +430,7 @@ export const data: Data = {
       name: 'lỏdland',
       state: 'Hot',
       detail: 'HN-1-details',
+      logoUrl: 'cat-2.jpg',
       brochureUrl: 'http://google.com',
       descriptions: [
         { imgDesc: 'Desc 1', imgUrl: 'cat.jpg'},
@@ -456,6 +467,7 @@ export const data: Data = {
       name: 'lỏdland',
       state: 'Hot',
       detail: 'HN-1-details',
+      logoUrl: 'cat-2.jpg',
       brochureUrl: 'http://google.com',
       descriptions: [
         { imgDesc: 'Desc 1', imgUrl: 'cat.jpg'},
