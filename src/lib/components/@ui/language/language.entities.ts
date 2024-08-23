@@ -10,4 +10,6 @@ export interface Lang {
 export const langs: Lang[] = [
   { code: 'en', name: 'English', icon: 'en.png' },
   { code: 'vi', name: 'Tiếng Việt', icon: 'vi.png' },
+  { code: 'cn', name: '中国人', icon: 'cn.png' },
+  { code: 'ko', name: '한국어', icon: 'ko.png' },
 ];
