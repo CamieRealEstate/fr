@@ -74,7 +74,7 @@ export const data: Data = {
       locationImgUrl: '/fr/sycamore/location.jpg',
       layouts: [
         { imgDesc: 'Typical floor plan', imgUrl: 'cat.jpg' },
-        { imgDesc: 'Penhouse floor plan', imgUrl: 'cat.jpg  ' }
+        { imgDesc: 'Penhouse floor plan', imgUrl: 'cat-2.jpg  ' }
       ],
       info: {
         phase: 2,
