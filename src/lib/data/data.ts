@@ -3,6 +3,8 @@ export interface InfoList {
   averageAreaOfUnit?: string;
   developer?: string;
   estimatedHandoverDate?: number;
+  phase?: number;
+  subzone?: number;
   handoverStandard?: string;
   height?: number;
   numberOfUnit?: number;
@@ -51,452 +53,44 @@ export interface Data {
 
 export const data: Data = {
   HN: [
-    {
-      id: 0,
-      name: 'lỏdland',
-      state: 'Hot',
-      detail: 'HN-1-details',
-      logoUrl: 'cat-2.jpg',
-      brochureUrl: 'http://google.com',
-      descriptions: [
-        { imgDesc: 'Desc 1', imgUrl: 'cat.jpg'},
-        { imgDesc: 'Desc 2', imgUrl: 'cat.jpg'},
-        { imgDesc: 'Desc 3', imgUrl: 'cat.jpg'},
-      ],
-      address: '69 Nibba nae nae',
-      locationImgUrl: 'cat.jpg',
-      layouts: [
-        { imgDesc: 'Typical floor plan', imgUrl: 'cat.jpg'},
-        { imgDesc: 'Penhouse floor plan', imgUrl: 'cat.jpg  '}
-      ],
-      info: {
-        area: '69 hectors',
-        averageAreaOfUnit: '30 m² to 100 m²',
-        developer: 'Lmao Inc',
-        estimatedHandoverDate: 2025,
-        handoverStandard: 'Completed',
-        height: 14,
-        maxPrice: 40,
-        numberOfUnit: 5678,
-        startingPrice: 3,
-        towers: 3,
-        type: ['Apartment','Villa'],
-      },
-      imgUrls:[
-        { id: 1, url: 'cat.jpg'},
-        { id: 2, url: 'cat-2.jpg'},
-        { id: 3, url: 'cat-3.jpg'},
-      ]
-    },
-    {
-      id: 1,
-      name: 'lỏdland',
-      state: 'Hot',
-      detail: 'HN-1-details',
-      logoUrl: 'cat-2.jpg',
-      brochureUrl: 'http://google.com',
-      descriptions: [
-        { imgDesc: 'Desc 1', imgUrl: 'cat.jpg'},
-        { imgDesc: 'Desc 2', imgUrl: 'cat.jpg'},
-        { imgDesc: 'Desc 3', imgUrl: 'cat.jpg'},
-      ],
-      address: '69 Nibba nae nae',
-      locationImgUrl: 'cat.jpg',
-      layouts: [
-        { imgDesc: 'Typical floor plan', imgUrl: 'cat.jpg'},
-        { imgDesc: 'Penhouse floor plan', imgUrl: 'cat.jpg  '}
-      ],
-      info: {
-        area: '69 hectors',
-        averageAreaOfUnit: '30 m² to 100 m²',
-        developer: 'Lmao Inc',
-        estimatedHandoverDate: 2025,
-        handoverStandard: 'Completed',
-        height: 14,
-        maxPrice: 40,
-        numberOfUnit: 5678,
-        startingPrice: 3,
-        towers: 3,
-        type: ['Apartment','Villa'],
-      },
-      imgUrls:[
-        { id: 1, url: 'cat.jpg'},
-        { id: 2, url: 'cat-2.jpg'},
-        { id: 3, url: 'cat-3.jpg'},
-      ]
-    },
-    {
-      id: 2,
-      name: 'lỏdland',
-      state: 'Hot',
-      detail: 'HN-1-details',
-      logoUrl: 'cat-2.jpg',
-      brochureUrl: 'http://google.com',
-      descriptions: [
-        { imgDesc: 'Desc 1', imgUrl: 'cat.jpg'},
-        { imgDesc: 'Desc 2', imgUrl: 'cat.jpg'},
-        { imgDesc: 'Desc 3', imgUrl: 'cat.jpg'},
-      ],
-      address: '69 Nibba nae nae',
-      locationImgUrl: 'cat.jpg',
-      layouts: [
-        { imgDesc: 'Typical floor plan', imgUrl: 'cat.jpg'},
-        { imgDesc: 'Penhouse floor plan', imgUrl: 'cat.jpg  '}
-      ],
-      info: {
-        area: '69 hectors',
-        averageAreaOfUnit: '30 m² to 100 m²',
-        developer: 'Lmao Inc',
-        estimatedHandoverDate: 2025,
-        handoverStandard: 'Completed',
-        height: 14,
-        maxPrice: 40,
-        numberOfUnit: 5678,
-        startingPrice: 3,
-        towers: 3,
-        type: ['Apartment','Villa'],
-      },
-      imgUrls:[
-        { id: 1, url: 'cat.jpg'},
-        { id: 2, url: 'cat-2.jpg'},
-        { id: 3, url: 'cat-3.jpg'},
-      ]
-    },
-    {
-      id: 3,
-      name: 'lỏdland',
-      state: 'Hot',
-      detail: 'HN-1-details',
-      logoUrl: 'cat-2.jpg',
-      brochureUrl: 'http://google.com',
-      descriptions: [
-        { imgDesc: 'Desc 1', imgUrl: 'cat.jpg'},
-        { imgDesc: 'Desc 2', imgUrl: 'cat.jpg'},
-        { imgDesc: 'Desc 3', imgUrl: 'cat.jpg'},
-      ],
-      address: '69 Nibba nae nae',
-      locationImgUrl: 'cat.jpg',
-      layouts: [
-        { imgDesc: 'Typical floor plan', imgUrl: 'cat.jpg'},
-        { imgDesc: 'Penhouse floor plan', imgUrl: 'cat.jpg  '}
-      ],
-      info: {
-        area: '69 hectors',
-        averageAreaOfUnit: '30 m² to 100 m²',
-        developer: 'Lmao Inc',
-        estimatedHandoverDate: 2025,
-        handoverStandard: 'Completed',
-        height: 14,
-        maxPrice: 40,
-        numberOfUnit: 5678,
-        startingPrice: 3,
-        towers: 3,
-        type: ['Apartment','Villa'],
-      },
-      imgUrls:[
-        { id: 1, url: 'cat.jpg'},
-        { id: 2, url: 'cat-2.jpg'},
-        { id: 3, url: 'cat-3.jpg'},
-      ]
-    },
+
   ],
   DN: [
-    {
-      id: 0,
-      name: 'lỏdland',
-      state: 'Hot',
-      detail: 'HN-1-details',
-      logoUrl: 'cat-2.jpg',
-      brochureUrl: 'http://google.com',
-      descriptions: [
-        { imgDesc: 'Desc 1', imgUrl: 'cat.jpg'},
-        { imgDesc: 'Desc 2', imgUrl: 'cat.jpg'},
-        { imgDesc: 'Desc 3', imgUrl: 'cat.jpg'},
-      ],
-      address: '69 Nibba nae nae',
-      locationImgUrl: 'cat.jpg',
-      layouts: [
-        { imgDesc: 'Typical floor plan', imgUrl: 'cat.jpg'},
-        { imgDesc: 'Penhouse floor plan', imgUrl: 'cat.jpg  '}
-      ],
-      info: {
-        area: '69 hectors',
-        averageAreaOfUnit: '30 m² to 100 m²',
-        developer: 'Lmao Inc',
-        estimatedHandoverDate: 2025,
-        handoverStandard: 'Completed',
-        height: 14,
-        maxPrice: 40,
-        numberOfUnit: 5678,
-        startingPrice: 3,
-        towers: 3,
-        type: ['Apartment','Villa'],
-      },
-      imgUrls:[
-        { id: 1, url: 'cat.jpg'},
-        { id: 2, url: 'cat-2.jpg'},
-        { id: 3, url: 'cat-3.jpg'},
-      ]
-    },
-    {
-      id: 1,
-      name: 'lỏdland',
-      state: 'Hot',
-      detail: 'HN-1-details',
-      logoUrl: 'cat-2.jpg',
-      brochureUrl: 'http://google.com',
-      descriptions: [
-        { imgDesc: 'Desc 1', imgUrl: 'cat.jpg'},
-        { imgDesc: 'Desc 2', imgUrl: 'cat.jpg'},
-        { imgDesc: 'Desc 3', imgUrl: 'cat.jpg'},
-      ],
-      address: '69 Nibba nae nae',
-      locationImgUrl: 'cat.jpg',
-      layouts: [
-        { imgDesc: 'Typical floor plan', imgUrl: 'cat.jpg'},
-        { imgDesc: 'Penhouse floor plan', imgUrl: 'cat.jpg  '}
-      ],
-      info: {
-        area: '69 hectors',
-        averageAreaOfUnit: '30 m² to 100 m²',
-        developer: 'Lmao Inc',
-        estimatedHandoverDate: 2025,
-        handoverStandard: 'Completed',
-        height: 14,
-        maxPrice: 40,
-        numberOfUnit: 5678,
-        startingPrice: 3,
-        towers: 3,
-        type: ['Apartment','Villa'],
-      },
-      imgUrls:[
-        { id: 1, url: 'cat.jpg'},
-        { id: 2, url: 'cat-2.jpg'},
-        { id: 3, url: 'cat-3.jpg'},
-      ]
-    },
-    {
-      id: 2,
-      name: 'lỏdland',
-      state: 'Hot',
-      detail: 'HN-1-details',
-      logoUrl: 'cat-2.jpg',
-      brochureUrl: 'http://google.com',
-      descriptions: [
-        { imgDesc: 'Desc 1', imgUrl: 'cat.jpg'},
-        { imgDesc: 'Desc 2', imgUrl: 'cat.jpg'},
-        { imgDesc: 'Desc 3', imgUrl: 'cat.jpg'},
-      ],
-      address: '69 Nibba nae nae',
-      locationImgUrl: 'cat.jpg',
-      layouts: [
-        { imgDesc: 'Typical floor plan', imgUrl: 'cat.jpg'},
-        { imgDesc: 'Penhouse floor plan', imgUrl: 'cat.jpg  '}
-      ],
-      info: {
-        area: '69 hectors',
-        averageAreaOfUnit: '30 m² to 100 m²',
-        developer: 'Lmao Inc',
-        estimatedHandoverDate: 2025,
-        handoverStandard: 'Completed',
-        height: 14,
-        maxPrice: 40,
-        numberOfUnit: 5678,
-        startingPrice: 3,
-        towers: 3,
-        type: ['Apartment','Villa'],
-      },
-      imgUrls:[
-        { id: 1, url: 'cat.jpg'},
-        { id: 2, url: 'cat-2.jpg'},
-        { id: 3, url: 'cat-3.jpg'},
-      ]
-    },
-    {
-      id: 3,
-      name: 'lỏdland',
-      state: 'Hot',
-      detail: 'HN-1-details',
-      logoUrl: 'cat-2.jpg',
-      brochureUrl: 'http://google.com',
-      descriptions: [
-        { imgDesc: 'Desc 1', imgUrl: 'cat.jpg'},
-        { imgDesc: 'Desc 2', imgUrl: 'cat.jpg'},
-        { imgDesc: 'Desc 3', imgUrl: 'cat.jpg'},
-      ],
-      address: '69 Nibba nae nae',
-      locationImgUrl: 'cat.jpg',
-      layouts: [
-        { imgDesc: 'Typical floor plan', imgUrl: 'cat.jpg'},
-        { imgDesc: 'Penhouse floor plan', imgUrl: 'cat.jpg  '}
-      ],
-      info: {
-        area: '69 hectors',
-        averageAreaOfUnit: '30 m² to 100 m²',
-        developer: 'Lmao Inc',
-        estimatedHandoverDate: 2025,
-        handoverStandard: 'Completed',
-        height: 14,
-        maxPrice: 40,
-        numberOfUnit: 5678,
-        startingPrice: 3,
-        towers: 3,
-        type: ['Apartment','Villa'],
-      },
-      imgUrls:[
-        { id: 1, url: 'cat.jpg'},
-        { id: 2, url: 'cat-2.jpg'},
-        { id: 3, url: 'cat-3.jpg'},
-      ]
-    },
+
   ],
   HCM: [
     {
       id: 0,
-      name: 'lỏdland',
+      name: 'SYCAMORE',
       state: 'Hot',
-      detail: 'HN-1-details',
-      logoUrl: 'cat-2.jpg',
+      detail: 'SY-0-details',
+      logoUrl: '/sycamore/logo.png',
       brochureUrl: 'http://google.com',
       descriptions: [
-        { imgDesc: 'Desc 1', imgUrl: 'cat.jpg'},
-        { imgDesc: 'Desc 2', imgUrl: 'cat.jpg'},
-        { imgDesc: 'Desc 3', imgUrl: 'cat.jpg'},
+        { imgDesc: 'SY-1-details', imgUrl: '/sycamore/detail-1.png' },
+        { imgDesc: 'SY-2-details', imgUrl: '/sycamore/detail-2.png' },
       ],
-      address: '69 Nibba nae nae',
+      address: 'Binh Duong New City, Viet Nam',
       locationImgUrl: 'cat.jpg',
       layouts: [
-        { imgDesc: 'Typical floor plan', imgUrl: 'cat.jpg'},
-        { imgDesc: 'Penhouse floor plan', imgUrl: 'cat.jpg  '}
+        { imgDesc: 'Typical floor plan', imgUrl: 'cat.jpg' },
+        { imgDesc: 'Penhouse floor plan', imgUrl: 'cat.jpg  ' }
       ],
       info: {
-        area: '69 hectors',
-        averageAreaOfUnit: '30 m² to 100 m²',
-        developer: 'Lmao Inc',
-        estimatedHandoverDate: 2025,
-        handoverStandard: 'Completed',
-        height: 14,
-        maxPrice: 40,
-        numberOfUnit: 5678,
-        startingPrice: 3,
-        towers: 3,
-        type: ['Apartment','Villa'],
+        phase: 2,
+        subzone: 7,
+        area: '18.9 hectors',
+        averageAreaOfUnit: '60 m² to 250 m²',
+        developer: 'CapitaLand and UOA Group',
+        maxPrice: 95,
+        numberOfUnit: 3500,
+        startingPrice: 48,
+        type: ['Apartment', 'Townhouse', 'Villa'],
       },
-      imgUrls:[
-        { id: 1, url: 'cat.jpg'},
-        { id: 2, url: 'cat-2.jpg'},
-        { id: 3, url: 'cat-3.jpg'},
-      ]
-    },
-    {
-      id: 1,
-      name: 'lỏdland',
-      state: 'Hot',
-      detail: 'HN-1-details',
-      logoUrl: 'cat-2.jpg',
-      brochureUrl: 'http://google.com',
-      descriptions: [
-        { imgDesc: 'Desc 1', imgUrl: 'cat.jpg'},
-        { imgDesc: 'Desc 2', imgUrl: 'cat.jpg'},
-        { imgDesc: 'Desc 3', imgUrl: 'cat.jpg'},
-      ],
-      address: '69 Nibba nae nae',
-      locationImgUrl: 'cat.jpg',
-      layouts: [
-        { imgDesc: 'Typical floor plan', imgUrl: 'cat.jpg'},
-        { imgDesc: 'Penhouse floor plan', imgUrl: 'cat.jpg  '}
-      ],
-      info: {
-        area: '69 hectors',
-        averageAreaOfUnit: '30 m² to 100 m²',
-        developer: 'Lmao Inc',
-        estimatedHandoverDate: 2025,
-        handoverStandard: 'Completed',
-        height: 14,
-        maxPrice: 40,
-        numberOfUnit: 5678,
-        startingPrice: 3,
-        towers: 3,
-        type: ['Apartment','Villa'],
-      },
-      imgUrls:[
-        { id: 1, url: 'cat.jpg'},
-        { id: 2, url: 'cat-2.jpg'},
-        { id: 3, url: 'cat-3.jpg'},
-      ]
-    },
-    {
-      id: 2,
-      name: 'lỏdland',
-      state: 'Hot',
-      detail: 'HN-1-details',
-      logoUrl: 'cat-2.jpg',
-      brochureUrl: 'http://google.com',
-      descriptions: [
-        { imgDesc: 'Desc 1', imgUrl: 'cat.jpg'},
-        { imgDesc: 'Desc 2', imgUrl: 'cat.jpg'},
-        { imgDesc: 'Desc 3', imgUrl: 'cat.jpg'},
-      ],
-      address: '69 Nibba nae nae',
-      locationImgUrl: 'cat.jpg',
-      layouts: [
-        { imgDesc: 'Typical floor plan', imgUrl: 'cat.jpg'},
-        { imgDesc: 'Penhouse floor plan', imgUrl: 'cat.jpg  '}
-      ],
-      info: {
-        area: '69 hectors',
-        averageAreaOfUnit: '30 m² to 100 m²',
-        developer: 'Lmao Inc',
-        estimatedHandoverDate: 2025,
-        handoverStandard: 'Completed',
-        height: 14,
-        maxPrice: 40,
-        numberOfUnit: 5678,
-        startingPrice: 3,
-        towers: 3,
-        type: ['Apartment','Villa'],
-      },
-      imgUrls:[
-        { id: 1, url: 'cat.jpg'},
-        { id: 2, url: 'cat-2.jpg'},
-        { id: 3, url: 'cat-3.jpg'},
-      ]
-    },
-    {
-      id: 3,
-      name: 'lỏdland',
-      state: 'Hot',
-      detail: 'HN-1-details',
-      logoUrl: 'cat-2.jpg',
-      brochureUrl: 'http://google.com',
-      descriptions: [
-        { imgDesc: 'Desc 1', imgUrl: 'cat.jpg'},
-        { imgDesc: 'Desc 2', imgUrl: 'cat.jpg'},
-        { imgDesc: 'Desc 3', imgUrl: 'cat.jpg'},
-      ],
-      address: '69 Nibba nae nae',
-      locationImgUrl: 'cat.jpg',
-      layouts: [
-        { imgDesc: 'Typical floor plan', imgUrl: 'cat.jpg'},
-        { imgDesc: 'Penhouse floor plan', imgUrl: 'cat.jpg  '}
-      ],
-      info: {
-        area: '69 hectors',
-        averageAreaOfUnit: '30 m² to 100 m²',
-        developer: 'Lmao Inc',
-        estimatedHandoverDate: 2025,
-        handoverStandard: 'Completed',
-        height: 14,
-        maxPrice: 40,
-        numberOfUnit: 5678,
-        startingPrice: 3,
-        towers: 3,
-        type: ['Apartment','Villa'],
-      },
-      imgUrls:[
-        { id: 1, url: 'cat.jpg'},
-        { id: 2, url: 'cat-2.jpg'},
-        { id: 3, url: 'cat-3.jpg'},
+      imgUrls: [
+        { id: 1, url: 'cat.jpg' },
+        { id: 2, url: 'cat-2.jpg' },
+        { id: 3, url: 'cat-3.jpg' },
       ]
     },
   ]

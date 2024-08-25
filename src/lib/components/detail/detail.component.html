@@ -30,8 +30,8 @@
           </swiper-slide>
         }
       </swiper-container>
-      <div class="grid grid-cols-3 pt-2">
-        <div class="italic text-gray-500" *ngIf="data.info?.startingPrice">
+      <div class="grid grid-cols-5 pt-2">
+        <div class="italic text-gray-500 col-span-3" *ngIf="data.info?.startingPrice">
           {{ 'Price range' | translate: { startingPrice: data.info?.startingPrice, maxPrice: data.info?.maxPrice } }}
         </div>
         <div class="col-span-2">
@@ -59,20 +59,24 @@
             {{ type | translate }},
           }
         </div>
-        <div class="col-span-2 font-medium">{{ 'Towers' | translate }}</div>
-        <div class="col-span-3">{{ data.info?.towers }}</div>
-        <div class="col-span-2 font-medium">{{ 'Height' | translate }}</div>
-        <div class="col-span-3">{{ data.info?.height }}</div>
+        <div class="col-span-2 font-medium" *ngIf="data.info?.towers">{{ 'Towers' | translate }}</div>
+        <div class="col-span-3" *ngIf="data.info?.towers">{{ data.info?.towers }}</div>
+        <div class="col-span-2 font-medium" *ngIf="data.info?.height">{{ 'Height' | translate }}</div>
+        <div class="col-span-3" *ngIf="data.info?.height">{{ data.info?.height }}</div>
+        <div class="col-span-2 font-medium" *ngIf="data.info?.phase">{{ 'Phase' | translate }}</div>
+        <div class="col-span-3" *ngIf="data.info?.phase">{{ data.info?.phase }}</div>
+        <div class="col-span-2 font-medium" *ngIf="data.info?.subzone">{{ 'Subzone' | translate }}</div>
+        <div class="col-span-3" *ngIf="data.info?.subzone">{{ data.info?.subzone }}</div>
         <div class="col-span-2 font-medium">{{ 'Total unit' | translate }}</div>
         <div class="col-span-3">{{ data.info?.numberOfUnit }}</div>
         <div class="col-span-2 font-medium">{{ 'Total area' | translate }}</div>
         <div class="col-span-3">{{ data.info?.area }}</div>
         <div class="col-span-2 font-medium">{{ 'Average area' | translate }}</div>
         <div class="col-span-3">{{ data.info?.averageAreaOfUnit }}</div>
-        <div class="col-span-2 font-medium">{{ 'Handover date' | translate }}</div>
-        <div class="col-span-3">{{ data.info?.estimatedHandoverDate }}</div>
-        <div class="col-span-2 font-medium">{{ 'Handover standard' | translate }}</div>
-        <div class="col-span-3">{{ data.info?.handoverStandard || '' | translate }}</div>
+        <div class="col-span-2 font-medium" *ngIf="data.info?.estimatedHandoverDate">{{ 'Handover date' | translate }}</div>
+        <div class="col-span-3" *ngIf="data.info?.estimatedHandoverDate">{{ data.info?.estimatedHandoverDate }}</div>
+        <div class="col-span-2 font-medium" *ngIf="data.info?.handoverStandard">{{ 'Handover standard' | translate }}</div>
+        <div class="col-span-3" *ngIf="data.info?.handoverStandard">{{ data.info?.handoverStandard || '' | translate }}</div>
       </div>
     </div>
   </div>

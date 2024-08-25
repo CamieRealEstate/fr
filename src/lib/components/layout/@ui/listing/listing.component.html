@@ -33,7 +33,7 @@
               class="absolute left-5 lg:left-8 top-[40%] max-w-[85%] opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-100 group-hover:delay-200 group-hover:duration-300"
             >
               <div class="line-clamp-3">{{ item.detail || '' | translate }}</div>
-              <div class="italic">
+              <div class="font-medium">
                 @for (type of item.info?.type; track type) {
                   {{ type | translate }},
                 }
@@ -52,7 +52,7 @@
             <mat-icon>bookmark</mat-icon>
           </div>
           <div
-            class="absolute left-5 lg:left-8 top-[63%] max-w-[85%] pt-4 opacity-100 transition-opacity duration-300 ease-out group-hover:opacity-0 group-hover:duration-300 text-black"
+            class="absolute left-5 lg:left-8 top-[63%] max-w-[85%] pt-4 opacity-100 transition-opacity duration-300 ease-out group-hover:opacity-0 group-hover:duration-300 text-white"
           >
             <div class="font-semibold text-xl"> {{ item.name }}</div>
             <div *ngIf="true">
