@@ -52,13 +52,13 @@ export interface Data {
 }
 
 export const data: Data = {
-  HN: [
+  BK: [
 
   ],
-  DN: [
+  TK: [
 
   ],
-  HCM: [
+  NK: [
     {
       id: 0,
       name: 'SYCAMORE',
