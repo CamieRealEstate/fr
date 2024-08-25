@@ -65,13 +65,13 @@ export const data: Data = {
       state: 'Hot',
       detail: 'SY-0-details',
       logoUrl: '/fr/sycamore/logo.png',
-      brochureUrl: 'http://google.com',
+      brochureUrl: 'https://drive.google.com/drive/folders/1KlO8EPYlCKi8ukHP6IRphjWTTW2ooTPZ?usp=sharing',
       descriptions: [
-        { imgDesc: 'SY-1-details', imgUrl: '/fr/sycamore/detail-1.png' },
-        { imgDesc: 'SY-2-details', imgUrl: '/fr/sycamore/detail-2.png' },
+        { imgDesc: 'SY-1-details', imgUrl: '/fr/sycamore/detail-1.jpg' },
+        { imgDesc: 'SY-2-details', imgUrl: '/fr/sycamore/detail-2.jpg' },
       ],
       address: 'Binh Duong New City, Viet Nam',
-      locationImgUrl: 'cat.jpg',
+      locationImgUrl: '/fr/sycamore/location.jpg',
       layouts: [
         { imgDesc: 'Typical floor plan', imgUrl: 'cat.jpg' },
         { imgDesc: 'Penhouse floor plan', imgUrl: 'cat.jpg  ' }
@@ -88,9 +88,9 @@ export const data: Data = {
         type: ['Apartment', 'Townhouse', 'Villa'],
       },
       imgUrls: [
-        { id: 1, url: 'cat.jpg' },
-        { id: 2, url: 'cat-2.jpg' },
-        { id: 3, url: 'cat-3.jpg' },
+        { id: 1, url: '/fr/sycamore/slide-1.jpg' },
+        { id: 2, url: '/fr/sycamore/slide-2.jpg' },
+        { id: 3, url: '/fr/sycamore/slide-3.jpg' },
       ]
     },
   ]

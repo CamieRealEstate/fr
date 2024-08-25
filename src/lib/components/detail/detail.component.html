@@ -30,7 +30,7 @@
           </swiper-slide>
         }
       </swiper-container>
-      <div class="grid grid-cols-5 pt-2">
+      <div class="grid grid-cols-5 pt-2 gap-1">
         <div class="italic text-gray-500 col-span-3" *ngIf="data.info?.startingPrice">
           {{ 'Price range' | translate: { startingPrice: data.info?.startingPrice, maxPrice: data.info?.maxPrice } }}
         </div>
@@ -85,12 +85,12 @@
   <div class="bg-white p-4 mt-5 rounded-lg" *ngIf="data.descriptions" [@slideDown]>
     <div class="text-xl">{{ 'Detail' | translate }}</div>
     <hr>
-    <div>{{ data.detail || '' | translate }}</div>
+    <div class="pt-2">{{ data.detail || '' | translate }}</div>
     <ng-container *ngIf="showDetail">
       @for (desc of data.descriptions; track desc) {
         <div [@slideDown]>
           <div class="flex pt-3 align-bottom">
-            {{ desc.imgDesc }}
+            {{ desc.imgDesc || '' | translate }}
           </div>
           <img ngSrc="{{desc.imgUrl}}" fill alt="" style="position:relative; padding-top: 1rem">
         </div>
@@ -130,7 +130,7 @@
     <div class="w-full flex justify-center text-xl">{{ 'Brochure' | translate }}</div>
     <hr>
     <div class="w-full flex justify-center pt-2">
-      <a href="{{data.brochureUrl}}">
+      <a href="{{data.brochureUrl}}" target="_blank">
         <button mat-fab extended>
           <mat-icon>download</mat-icon>
           {{ "Click to download" | translate }}
