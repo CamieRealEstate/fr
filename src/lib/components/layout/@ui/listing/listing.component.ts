@@ -17,12 +17,12 @@ import { animate, style, transition, trigger } from '@angular/animations';
 import { MatIcon } from '@angular/material/icon';
 import { TranslateModule } from '@ngx-translate/core';
 
-import { data, DEFAULT_REGION, KEY_REGION, ListItem } from '../../../../../lib';
+import { CumminComponent, data, DEFAULT_REGION, KEY_REGION, ListItem } from '../../../../../lib';
 
 @Component({
   selector: 'app-listing',
   standalone: true,
-  imports: [CommonModule, MatCard, MatCardHeader, MatCardSubtitle, MatCardTitle, MatCardContent, MatCardActions, MatCardFooter, MatChipSet, MatChip, MatCardImage, RouterLink, TranslateModule, MatIcon, NgOptimizedImage, MatMiniFabButton],
+  imports: [CommonModule, MatCard, MatCardHeader, MatCardSubtitle, MatCardTitle, MatCardContent, MatCardActions, MatCardFooter, MatChipSet, MatChip, MatCardImage, RouterLink, TranslateModule, MatIcon, NgOptimizedImage, MatMiniFabButton, CumminComponent],
   templateUrl: './listing.component.html',
   styleUrl: './listing.component.scss',
   animations:[

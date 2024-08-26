@@ -1,4 +1,4 @@
-<div class="listing-container h-[90%] grid lg:grid-cols-2 mx-5">
+<div class="listing-container h-[90%] grid lg:grid-cols-2 mx-5" *ngIf="listing.length; else comingSoon">
   @for (item of listing; track item.id) {
     <div
       class="h-[45dvh] w-[90vw] lg:w-full pt-3 px-2 text-white"
@@ -8,7 +8,7 @@
         *ngIf="true"
         [@fadeInLeft]
         routerLink="/listing/detail"
-        [queryParams]="{item: item.id, region: this.region() || DEFAULT_REGION }"
+        [queryParams]="{item: item.id, region: item.region }"
       >
         <article
           class="group relative aspect-video h-[42dvh] w-full cursor-pointer overflow-hidden rounded-xl shadow-md hover:shadow-2xl"
@@ -70,3 +70,7 @@
     <mat-icon>arrow_upward</mat-icon>
   </button>
 </div>
+
+<ng-template #comingSoon>
+  <app-cummin></app-cummin>
+</ng-template>

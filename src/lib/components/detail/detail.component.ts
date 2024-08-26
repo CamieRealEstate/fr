@@ -45,7 +45,7 @@ export class DetailComponent {
   item = signal(new URLSearchParams(window.location.search).get(KEY_ITEM));
   region = signal(new URLSearchParams(window.location.search).get(KEY_REGION) || DEFAULT_REGION);
 
-  data: ListItem = data[this.region()].find(item => item.id.toString() === this.item()) || { id: 0 };
+  data: ListItem = data[this.region()].find(item => item.id.toString() === this.item()) || { id: 0, region: 'NK' };
   currentDate = new Date().toLocaleDateString();
   showDetail = false;
 
