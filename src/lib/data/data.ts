@@ -93,5 +93,39 @@ export const data: Data = {
         { id: 3, url: '/fr/sycamore/slide-3.jpg' },
       ]
     },
+    {
+      id: 1,
+      name: 'THE OPUSK',
+      state: 'Hot',
+      detail: 'OP-0-details',
+      logoUrl: '/fr/Opusk/cover/2.png',
+      brochureUrl: 'https://drive.google.com/file/d/1xMJUK8j4lLeCiAOf62jzqg7YOPj4A4HL/view?usp=sharing',
+      descriptions: [
+        { imgDesc: 'OP-1-details', imgUrl: '/fr/Opusk/Location1.jpg' },
+        { imgDesc: 'SY-2-details', imgUrl: '/fr/sycamore/detail-2.jpg' },
+      ],
+      address: 'Thu Thiem, Ho Chi Minh City, Viet Nam',
+      locationImgUrl: '/fr/Opusk/Location.jpg',
+      layouts: [
+        { imgDesc: 'Typical floor plan floor 9-18 and 20-23', imgUrl: '/fr/Opusk/FloorPlan/1.png' },
+        { imgDesc: 'Typical floor plan floor 24-33', imgUrl: '/fr/Opusk/FloorPlan/2.jpg' }
+      ],
+      info: {
+        phase: 4,
+        area: '8518 m²',
+        averageAreaOfUnit: '84 m² to 214 m²',
+        developer: 'Son Kim Land & Quoc Loc Phat',
+        maxPrice: 300,
+        startingPrice: 250,
+        type: ['Apartment', 'Shophouse', 'Officetel'],
+      },
+      imgUrls: [
+        { id: 1, url: '/fr/Opusk/cover/1.jpg' },
+        { id: 2, url: '/fr/Opusk/cover/3.jpg' },
+        { id: 3, url: '/fr/Opusk/cover/4.jpg' },
+        { id: 4, url: '/fr/Opusk/cover/6.jpg' },
+        { id: 5, url: '/fr/Opusk/cover/7.jpg' },
+      ]
+    },
   ]
 };

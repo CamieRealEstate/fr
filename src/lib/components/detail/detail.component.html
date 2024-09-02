@@ -67,8 +67,8 @@
         <div class="col-span-3" *ngIf="data.info?.phase">{{ data.info?.phase }}</div>
         <div class="col-span-2 font-medium" *ngIf="data.info?.subzone">{{ 'Subzone' | translate }}</div>
         <div class="col-span-3" *ngIf="data.info?.subzone">{{ data.info?.subzone }}</div>
-        <div class="col-span-2 font-medium">{{ 'Total unit' | translate }}</div>
-        <div class="col-span-3">{{ data.info?.numberOfUnit }}</div>
+        <div class="col-span-2 font-medium" *ngIf="data.info?.numberOfUnit">{{ 'Total unit' | translate }}</div>
+        <div class="col-span-3" *ngIf="data.info?.numberOfUnit">{{ data.info?.numberOfUnit }}</div>
         <div class="col-span-2 font-medium">{{ 'Total area' | translate }}</div>
         <div class="col-span-3">{{ data.info?.area }}</div>
         <div class="col-span-2 font-medium">{{ 'Average area' | translate }}</div>
