@@ -43,9 +43,12 @@ export interface ListItem {
   locationImgUrl?: string;
   logoUrl?: string;
   name?: string;
+  region: Region;
   state?: string;
   tags?: string[];
 }
+
+export type Region = 'BK' | 'TK' | 'NK';
 
 export interface Data {
   [key: string]: ListItem[];
@@ -61,6 +64,7 @@ export const data: Data = {
   NK: [
     {
       id: 0,
+      region: 'NK',
       name: 'SYCAMORE',
       state: 'Hot',
       detail: 'SY-0-details',
