@@ -99,6 +99,7 @@ export const data: Data = {
     },
     {
       id: 1,
+      region: 'NK',
       name: 'THE OPUSK',
       state: 'Hot',
       detail: 'OP-0-details',
