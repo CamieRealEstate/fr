@@ -102,10 +102,11 @@
   </div>
 
   <!--  Location-->
-  <div class="bg-white p-4 mt-5 rounded-lg" *ngIf="data.locationImgUrl">
+  <div class="bg-white p-4 mt-5 rounded-lg" *ngIf="data.location">
     <div class="text-xl">{{ 'Location' | translate }}</div>
     <hr>
-    <img ngSrc="{{data.locationImgUrl}}" fill alt="" style="position:relative; padding-top: 1rem;" class="rounded-xl">
+    <div class="pt-2" *ngIf="data.location.desc">{{ data.location.desc || '' | translate }}</div>
+    <img ngSrc="{{ data.location.url }}" fill alt="" style="position:relative; padding-top: 1rem;" class="rounded-xl">
   </div>
 
   <!--Layout-->

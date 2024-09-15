@@ -30,6 +30,12 @@ export interface Image {
   url: string;
 }
 
+export interface Location {
+  id: number;
+  url: string;
+  desc: string;
+}
+
 export interface ListItem {
   address?: string;
   brochureUrl?: string;
@@ -40,7 +46,7 @@ export interface ListItem {
   imgUrls?: Image[];
   info?: InfoList;
   layouts?: Layout[];
-  locationImgUrl?: string;
+  location?: Location;
   logoUrl?: string;
   name?: string;
   region: Region;
@@ -75,7 +81,7 @@ export const data: Data = {
         { imgDesc: 'SY-2-details', imgUrl: '/fr/sycamore/detail-2.jpg' },
       ],
       address: 'Binh Duong New City, Viet Nam',
-      locationImgUrl: '/fr/sycamore/location.jpg',
+      location: { id: 1, url: '/fr/sycamore/location.jpg', desc: '' },
       layouts: [
         { imgDesc: 'Typical floor plan', imgUrl: 'cat.jpg' },
         { imgDesc: 'Penhouse floor plan', imgUrl: 'cat-2.jpg  ' }
@@ -107,10 +113,9 @@ export const data: Data = {
       brochureUrl: 'https://drive.google.com/file/d/1xMJUK8j4lLeCiAOf62jzqg7YOPj4A4HL/view?usp=sharing',
       descriptions: [
         { imgDesc: 'OP-1-details', imgUrl: '/fr/Opusk/Location1.jpg' },
-        { imgDesc: 'SY-2-details', imgUrl: '/fr/sycamore/detail-2.jpg' },
       ],
       address: 'Thu Thiem, Ho Chi Minh City, Viet Nam',
-      locationImgUrl: '/fr/Opusk/Location.jpg',
+      location: { id:1, url: '/fr/Opusk/Location.jpg', desc: 'OP-Location-Desc' },
       layouts: [
         { imgDesc: 'Typical floor plan floor 9-18 and 20-23', imgUrl: '/fr/Opusk/FloorPlan/1.png' },
         { imgDesc: 'Typical floor plan floor 24-33', imgUrl: '/fr/Opusk/FloorPlan/2.jpg' }
