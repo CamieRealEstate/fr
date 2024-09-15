@@ -9,6 +9,8 @@
   "Completed": "Hoàn thiện",
   "Detail": "Mô tả",
   "Developer": "Chủ đầu tư",
+  "Duplex floor plan": "Mặt bằng căn hộ Duplex",
+  "Penthouse floor plan": "Mặt bằng Penthouse",
   "General Info": "Tổng quan",
   "Handover date": "Bàn giao",
   "Handover standard": "Tiểu chuẩn bàn giao",
@@ -43,5 +45,9 @@
   "Total unit": "Tổng số sản phẩm",
   "Towers": "Số tòa",
   "Townhouse": "Nhà phố",
+  "Typical floor plan floor 9-18 and 20-23": "Mặt bằng tổng thể tầng 9-18 và 20-23",
+  "Typical floor plan floor 24-33": "Mặt bằng tổng thể tầng 24-33",
+  "Typical floor plan of Orchard Hill I": "Mặt bẳng tổng thể tòa Orchard hill I",
+  "Typical floor plan of Orchard Hill II": "Mặt bẳng tổng thể tòa Orchard hill II",
   "Villa": "Biệt thự"
 }

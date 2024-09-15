@@ -9,6 +9,8 @@
   "Completed": "Completed",
   "Detail": "Detail",
   "Developer": "Developer",
+  "Duplex floor plan": "Duplex floor plan",
+  "Penthouse floor plan": "Penthouse floor plan",
   "General Info": "General Information",
   "Handover date": "Handover date",
   "Handover standard": "Handover standard",
@@ -43,5 +45,9 @@
   "Total unit": "Total Unit",
   "Towers": "Towers",
   "Townhouse": "Townhouse",
+  "Typical floor plan floor 9-18 and 20-23": "Typical floor plan floor 9-18 and 20-23",
+  "Typical floor plan floor 24-33": "Typical floor plan floor 24-33",
+  "Typical floor plan of Orchard Hill I": "Typical floor plan of Orchard Hill I",
+  "Typical floor plan of Orchard Hill II": "Typical floor plan of Orchard Hill II",
   "Villa": "Villa"
 }

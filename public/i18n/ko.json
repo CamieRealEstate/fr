@@ -9,6 +9,8 @@
   "Completed": "완성됨",
   "Detail": "세부 정보",
   "Developer": "개발자",
+  "Duplex floor plan": "듀플렉스 평면도",
+  "Penthouse floor plan": "펜트하우스 평면도",
   "General Info": "일반 정보",
   "Handover date": "수령 날짜",
   "Handover standard": "수령 기준",
@@ -43,5 +45,9 @@
   "Total unit": "전체 제품 수",
   "Towers": "빌딩 수",
   "Townhouse": "주택가",
+  "Typical floor plan floor 9-18 and 20-23": "전형적인 평면도 9-18층 및 20-23층",
+  "Typical floor plan floor 24-33": "오차드 힐 I 건물의 전체 평면도",
+  "Typical floor plan of Orchard Hill I": "Orchard Hill I 건물의 전체 평면도",
+  "Typical floor plan of Orchard Hill II": "Orchard Hill II 건물의 전체 평면도",
   "Villa": "빌라"
 }

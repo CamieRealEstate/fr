@@ -117,7 +117,7 @@
       <div class="flex pt-3 align-bottom" (click)="toggleImageVisibility(img)">
         <mat-icon *ngIf="!img.imgVisible">keyboard_arrow_down</mat-icon>
         <mat-icon *ngIf="img.imgVisible">keyboard_arrow_up</mat-icon>
-        {{ img.imgDesc }}
+        {{ img.imgDesc || '' | translate }}
       </div>
       <ng-container *ngIf="img.imgVisible">
         <img [@slideDown] ngSrc="{{img.imgUrl}}" fill alt="" style="position:relative; padding-top: 1rem"

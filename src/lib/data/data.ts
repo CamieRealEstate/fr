@@ -61,12 +61,8 @@ export interface Data {
 }
 
 export const data: Data = {
-  BK: [
-
-  ],
-  TK: [
-
-  ],
+  BK: [],
+  TK: [],
   NK: [
     {
       id: 0,
@@ -78,13 +74,15 @@ export const data: Data = {
       brochureUrl: 'https://drive.google.com/drive/folders/1KlO8EPYlCKi8ukHP6IRphjWTTW2ooTPZ?usp=sharing',
       descriptions: [
         { imgDesc: 'SY-1-details', imgUrl: '/fr/sycamore/detail-1.jpg' },
-        { imgDesc: 'SY-2-details', imgUrl: '/fr/sycamore/detail-2.jpg' },
+        { imgDesc: 'SY-2-details', imgUrl: '/fr/sycamore/detail-2.jpg' }
       ],
       address: 'Binh Duong New City, Viet Nam',
       location: { id: 1, url: '/fr/sycamore/location.jpg', desc: '' },
       layouts: [
-        { imgDesc: 'Typical floor plan', imgUrl: 'cat.jpg' },
-        { imgDesc: 'Penhouse floor plan', imgUrl: 'cat-2.jpg  ' }
+        { imgDesc: 'Typical floor plan of Orchard Hill I', imgUrl: '/fr/sycamore/floor-flan/1.jpg' },
+        { imgDesc: 'Typical floor plan of Orchard Hill II', imgUrl: '/fr/sycamore/floor-flan/2.jpg' },
+        { imgDesc: 'Duplex floor plan', imgUrl: '/fr/sycamore/floor-flan/3.png' },
+        { imgDesc: 'Penthouse floor plan', imgUrl: '/fr/sycamore/floor-flan/4.png' }
       ],
       info: {
         phase: 2,
@@ -95,12 +93,12 @@ export const data: Data = {
         maxPrice: 95,
         numberOfUnit: 3500,
         startingPrice: 48,
-        type: ['Apartment', 'Townhouse', 'Villa'],
+        type: ['Apartment', 'Townhouse', 'Villa']
       },
       imgUrls: [
         { id: 1, url: '/fr/sycamore/slide-1.jpg' },
         { id: 2, url: '/fr/sycamore/slide-2.jpg' },
-        { id: 3, url: '/fr/sycamore/slide-3.jpg' },
+        { id: 3, url: '/fr/sycamore/slide-3.jpg' }
       ]
     },
     {
@@ -112,10 +110,10 @@ export const data: Data = {
       logoUrl: '/fr/Opusk/cover/2.png',
       brochureUrl: 'https://drive.google.com/file/d/1xMJUK8j4lLeCiAOf62jzqg7YOPj4A4HL/view?usp=sharing',
       descriptions: [
-        { imgDesc: 'OP-1-details', imgUrl: '/fr/Opusk/Location1.jpg' },
+        { imgDesc: 'OP-1-details', imgUrl: '/fr/Opusk/Location1.jpg' }
       ],
       address: 'Thu Thiem, Ho Chi Minh City, Viet Nam',
-      location: { id:1, url: '/fr/Opusk/Location.jpg', desc: 'OP-Location-Desc' },
+      location: { id: 1, url: '/fr/Opusk/Location.jpg', desc: 'OP-Location-Desc' },
       layouts: [
         { imgDesc: 'Typical floor plan floor 9-18 and 20-23', imgUrl: '/fr/Opusk/FloorPlan/1.png' },
         { imgDesc: 'Typical floor plan floor 24-33', imgUrl: '/fr/Opusk/FloorPlan/2.jpg' }
@@ -127,15 +125,15 @@ export const data: Data = {
         developer: 'Son Kim Land & Quoc Loc Phat',
         maxPrice: 300,
         startingPrice: 250,
-        type: ['Apartment', 'Shophouse', 'Officetel'],
+        type: ['Apartment', 'Shophouse', 'Officetel']
       },
       imgUrls: [
         { id: 1, url: '/fr/Opusk/cover/1.jpg' },
         { id: 2, url: '/fr/Opusk/cover/3.jpg' },
         { id: 3, url: '/fr/Opusk/cover/4.jpg' },
         { id: 4, url: '/fr/Opusk/cover/6.jpg' },
-        { id: 5, url: '/fr/Opusk/cover/7.jpg' },
+        { id: 5, url: '/fr/Opusk/cover/7.jpg' }
       ]
-    },
+    }
   ]
 };
