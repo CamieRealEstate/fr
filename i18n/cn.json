@@ -9,6 +9,8 @@
   "Completed": "完成",
   "Detail": "详情",
   "Developer": "开发商",
+  "Duplex floor plan": "复式楼层平面图",
+  "Penthouse floor plan": "顶层公寓平面图",
   "General Info": "概览",
   "Handover date": "交付日期",
   "Handover standard": "交付标准",
@@ -43,5 +45,9 @@
   "Total unit": "总产品数",
   "Towers": "塔楼数量",
   "Townhouse": "排屋",
+  "Typical floor plan floor 9-18 and 20-23": "典型楼层平面图 9-18 和 20-23 层",
+  "Typical floor plan floor 24-33": "典型楼层平面图 24-33 层",
+  "Typical floor plan of Orchard Hill I": "Orchard Hill I 的整体平面图",
+  "Typical floor plan of Orchard Hill II": "Orchard Hill II 的整体平面图",
   "Villa": "别墅"
 }
