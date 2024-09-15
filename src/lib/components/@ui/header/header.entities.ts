@@ -6,5 +6,5 @@ export interface Link {
 export const links: Link[] = [
   { name: 'Regions', route: '/home' },
   { name: 'Listing', route: '/listing' },
-  { name: 'About', route: '/about' },
+  // { name: 'About', route: '/about' },
 ];
