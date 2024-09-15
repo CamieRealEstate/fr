@@ -1,152 +1,184 @@
 <app-header></app-header>
-<div class="lg:px-20 p-4 bg-gray-100">
-  <div class="lg:grid lg:grid-cols-2 lg: gap-4">
-    <!--  Product info-->
-    <div class="bg-white p-4 mt-2 rounded-lg" *ngIf="true" [@fadeInTopFast]>
-      <div class="text-2xl">{{ data.name }}</div>
-      <div>{{ data.address }}</div>
-      <div>{{ 'productInfo' | translate: { name: data.name, currentDate: currentDate } }}</div>
-      <swiper-container
-        navigation="true"
-        autoplay="true"
-        pagination="true"
-        pagination-dynamic-bullets="true"
-        grab-cursor="true"
-        effect="coverflow"
-        centered-slides="true"
-        slides-per-view="1"
-        coverflow-effect-rotate="50"
-        coverflow-effect-stretch="0"
-        coverflow-effect-depth="100"
-        coverflow-effect-modifier="1"
-        coverflow-effect-slide-shadows="true"
-        *ngIf="data.imgUrls"
-      >
-        @for (img of data.imgUrls; track img.id) {
-          <swiper-slide>
-            <div class="h-[40dvh] relative">
-              <img ngSrc="{{img.url}}" alt="" fill class="rounded-2xl">
-            </div>
-          </swiper-slide>
-        }
-      </swiper-container>
-      <div class="grid grid-cols-5 pt-2 gap-1">
-        <div class="italic text-gray-500 col-span-3" *ngIf="data.info?.startingPrice">
-          {{ 'Price range' | translate: { startingPrice: data.info?.startingPrice, maxPrice: data.info?.maxPrice } }}
-        </div>
-        <div class="col-span-2">
-          @for (type of data.info?.type; track type) {
-            {{ type | translate }},
+<div class="lg:grid lg:grid-cols-4 bg-gray-100">
+  <div class="lg:pl-10 py-4 px-2 lg:col-span-3">
+    <div class="lg:grid lg:grid-cols-2 lg:gap-4">
+      <!--  Product info-->
+      <div class="bg-white p-4 mt-2 rounded-lg" *ngIf="true" [@fadeInTopFast]>
+        <div class="text-2xl">{{ data.name }}</div>
+        <div>{{ data.address }}</div>
+        <div>{{ 'productInfo' | translate: { name: data.name, currentDate: currentDate } }}</div>
+        <swiper-container
+          navigation="true"
+          autoplay="true"
+          pagination="true"
+          pagination-dynamic-bullets="true"
+          grab-cursor="true"
+          effect="coverflow"
+          centered-slides="true"
+          slides-per-view="1"
+          coverflow-effect-rotate="50"
+          coverflow-effect-stretch="0"
+          coverflow-effect-depth="100"
+          coverflow-effect-modifier="1"
+          coverflow-effect-slide-shadows="true"
+          *ngIf="data.imgUrls"
+        >
+          @for (img of data.imgUrls; track img.id) {
+            <swiper-slide>
+              <div class="h-[40dvh] relative">
+                <img ngSrc="{{img.url}}" alt="" fill class="rounded-2xl" priority>
+              </div>
+            </swiper-slide>
           }
-        </div>
-      </div>
-    </div>
-
-    <!--  General Information-->
-    <div class="bg-white p-4 mt-5 lg:mt-2 rounded-lg" *ngIf="true" [@fadeInTopSlow]>
-      <div class="text-xl">{{ 'General Info' | translate }}</div>
-      <hr>
-      <div class="grid grid-cols-5 mt-3 gap-y-2">
-        <div class="col-span-2 font-medium">{{ 'Product name' | translate }}</div>
-        <div class="col-span-3">{{ data.name }}</div>
-        <div class="col-span-2 font-medium">{{ 'Developer' | translate }}</div>
-        <div class="col-span-3">{{ data.info?.developer }}</div>
-        <div class="col-span-2 font-medium">{{ 'Total area' | translate }}</div>
-        <div class="col-span-3">{{ data.info?.area }}</div>
-        <div class="col-span-2 font-medium">{{ 'Product type' | translate }}</div>
-        <div class="col-span-3">
-          @for (type of data.info?.type; track type) {
-            {{ type | translate }},
-          }
-        </div>
-        <div class="col-span-2 font-medium" *ngIf="data.info?.towers">{{ 'Towers' | translate }}</div>
-        <div class="col-span-3" *ngIf="data.info?.towers">{{ data.info?.towers }}</div>
-        <div class="col-span-2 font-medium" *ngIf="data.info?.height">{{ 'Height' | translate }}</div>
-        <div class="col-span-3" *ngIf="data.info?.height">{{ data.info?.height }}</div>
-        <div class="col-span-2 font-medium" *ngIf="data.info?.phase">{{ 'Phase' | translate }}</div>
-        <div class="col-span-3" *ngIf="data.info?.phase">{{ data.info?.phase }}</div>
-        <div class="col-span-2 font-medium" *ngIf="data.info?.subzone">{{ 'Subzone' | translate }}</div>
-        <div class="col-span-3" *ngIf="data.info?.subzone">{{ data.info?.subzone }}</div>
-        <div class="col-span-2 font-medium" *ngIf="data.info?.numberOfUnit">{{ 'Total unit' | translate }}</div>
-        <div class="col-span-3" *ngIf="data.info?.numberOfUnit">{{ data.info?.numberOfUnit }}</div>
-        <div class="col-span-2 font-medium">{{ 'Total area' | translate }}</div>
-        <div class="col-span-3">{{ data.info?.area }}</div>
-        <div class="col-span-2 font-medium">{{ 'Average area' | translate }}</div>
-        <div class="col-span-3">{{ data.info?.averageAreaOfUnit }}</div>
-        <div class="col-span-2 font-medium" *ngIf="data.info?.estimatedHandoverDate">{{ 'Handover date' | translate }}</div>
-        <div class="col-span-3" *ngIf="data.info?.estimatedHandoverDate">{{ data.info?.estimatedHandoverDate }}</div>
-        <div class="col-span-2 font-medium" *ngIf="data.info?.handoverStandard">{{ 'Handover standard' | translate }}</div>
-        <div class="col-span-3" *ngIf="data.info?.handoverStandard">{{ data.info?.handoverStandard || '' | translate }}</div>
-      </div>
-    </div>
-  </div>
-
-  <!--  Detail-->
-  <div class="bg-white p-4 mt-5 rounded-lg" *ngIf="data.descriptions" [@slideDown]>
-    <div class="text-xl">{{ 'Detail' | translate }}</div>
-    <hr>
-    <div class="pt-2">{{ data.detail || '' | translate }}</div>
-    <ng-container *ngIf="showDetail">
-      @for (desc of data.descriptions; track desc) {
-        <div [@slideDown]>
-          <div class="flex pt-3 align-bottom">
-            {{ desc.imgDesc || '' | translate }}
+        </swiper-container>
+        <div class="grid grid-cols-5 pt-2 gap-1">
+          <div class="italic text-gray-500 col-span-3" *ngIf="data.info?.startingPrice">
+            {{ 'Price range' | translate: { startingPrice: data.info?.startingPrice, maxPrice: data.info?.maxPrice } }}
           </div>
-          <img ngSrc="{{desc.imgUrl}}" fill alt="" style="position:relative; padding-top: 1rem">
+          <div class="italic text-gray-500 col-span-3" *ngIf="data.info?.startFrom">
+            {{ 'Start from' | translate: { startFrom: data.info?.startFrom } }}
+          </div>
+          <div class="col-span-2">
+            @for (type of data.info?.type; track type) {
+              {{ type | translate }},
+            }
+          </div>
         </div>
-      }
-    </ng-container>
-    <div class="m-2 flex justify-center">
-      <button mat-raised-button (click)="toggleDetailVisibility()">{{ buttonText | translate }}</button>
-    </div>
-  </div>
-
-  <!--  Location-->
-  <div class="bg-white p-4 mt-5 rounded-lg" *ngIf="data.location">
-    <div class="text-xl">{{ 'Location' | translate }}</div>
-    <hr>
-    <div class="pt-2" *ngIf="data.location.desc">{{ data.location.desc || '' | translate }}</div>
-    <img ngSrc="{{ data.location.url }}" fill alt="" style="position:relative; padding-top: 1rem;" class="rounded-xl">
-  </div>
-
-  <!--Layout-->
-  <div class="bg-white p-4 mt-5 rounded-lg" *ngIf="data.layouts">
-    <div class="text-xl">{{ 'Layout' | translate }}</div>
-    <hr>
-    @for (img of data.layouts; track img) {
-      <div class="flex pt-3 align-bottom" (click)="toggleImageVisibility(img)">
-        <mat-icon *ngIf="!img.imgVisible">keyboard_arrow_down</mat-icon>
-        <mat-icon *ngIf="img.imgVisible">keyboard_arrow_up</mat-icon>
-        {{ img.imgDesc || '' | translate }}
       </div>
-      <ng-container *ngIf="img.imgVisible">
-        <img [@slideDown] ngSrc="{{img.imgUrl}}" fill alt="" style="position:relative; padding-top: 1rem"
-             class="rounded-xl">
-      </ng-container>
-    }
-  </div>
 
-  <!--Brochure-->
-  <div class="bg-white p-4 mt-5 rounded-lg" *ngIf="data.brochureUrl">
-    <div class="w-full flex justify-center text-xl">{{ 'Brochure' | translate }}</div>
-    <hr>
-    <div class="w-full flex justify-center pt-2">
-      <a href="{{data.brochureUrl}}" target="_blank">
-        <button mat-fab extended>
-          <mat-icon>download</mat-icon>
-          {{ "Click to download" | translate }}
-        </button>
-      </a>
+      <!--  General Information-->
+      <div class="bg-white p-4 mt-5 lg:mt-2 rounded-lg" *ngIf="true" [@fadeInTopSlow]>
+        <div class="text-xl">{{ 'General Info' | translate }}</div>
+        <hr>
+        <div class="grid grid-cols-5 mt-3 gap-y-2">
+          <div class="col-span-2 font-medium">{{ 'Product name' | translate }}</div>
+          <div class="col-span-3">{{ data.name }}</div>
+
+          <div class="col-span-2 font-medium">{{ 'Developer' | translate }}</div>
+          <div class="col-span-3">{{ data.info?.developer }}</div>
+
+          <div class="col-span-2 font-medium">{{ 'Total area' | translate }}</div>
+          <div class="col-span-3">{{ data.info?.area }}</div>
+
+          <div class="col-span-2 font-medium">{{ 'Product type' | translate }}</div>
+          <div class="col-span-3">
+            @for (type of data.info?.type; track type) {
+              {{ type | translate }},
+            }
+          </div>
+
+          <div class="col-span-2 font-medium" *ngIf="data.info?.towers">{{ 'Towers' | translate }}</div>
+          <div class="col-span-3" *ngIf="data.info?.towers">{{ data.info?.towers }}</div>
+
+          <div class="col-span-2 font-medium" *ngIf="data.info?.height">{{ 'Height' | translate }}</div>
+          <div class="col-span-3" *ngIf="data.info?.height">{{ data.info?.height }}</div>
+
+          <div class="col-span-2 font-medium" *ngIf="data.info?.phase">{{ 'Phase' | translate }}</div>
+          <div class="col-span-3" *ngIf="data.info?.phase">{{ data.info?.phase }}</div>
+
+          <div class="col-span-2 font-medium" *ngIf="data.info?.subzone">{{ 'Subzone' | translate }}</div>
+          <div class="col-span-3" *ngIf="data.info?.subzone">{{ data.info?.subzone }}</div>
+
+          <div class="col-span-2 font-medium" *ngIf="data.info?.numberOfUnit">{{ 'Total unit' | translate }}</div>
+          <div class="col-span-3" *ngIf="data.info?.numberOfUnit">{{ data.info?.numberOfUnit || '' | translate}}</div>
+
+          <div class="col-span-2 font-medium">{{ 'Total area' | translate }}</div>
+          <div class="col-span-3">{{ data.info?.area }}</div>
+
+          <div class="col-span-2 font-medium">{{ 'Average area' | translate }}</div>
+          <div class="col-span-3">{{ data.info?.averageAreaOfUnit }}</div>
+
+          <div class="col-span-2 font-medium" *ngIf="data.info?.designer">{{ 'Designer' | translate }}
+          </div>
+          <div class="col-span-3"
+               *ngIf="data.info?.designer">{{ data.info?.designer || '' | translate }}
+          </div>
+
+          <div class="col-span-2 font-medium" *ngIf="data.info?.estimatedHandoverDate">{{ 'Handover date' | translate }}
+          </div>
+
+          <div class="col-span-3" *ngIf="data.info?.estimatedHandoverDate">{{ data.info?.estimatedHandoverDate }}</div>
+
+          <div class="col-span-2 font-medium" *ngIf="data.info?.handoverStandard">{{ 'Handover standard' | translate }}
+          </div>
+          <div class="col-span-3"
+               *ngIf="data.info?.handoverStandard">{{ data.info?.handoverStandard || '' | translate }}
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
 
-  <button
-    mat-mini-fab
-    (click)="goTop()"
-    class="scroll-top-button lg:right-[2vw] right-[4vw]"
-    matTooltip="{{'Scroll to top' | translate}}"
-  >
-    <mat-icon>arrow_upward</mat-icon>
-  </button>
+    <!--  Detail-->
+    <div class="bg-white p-4 mt-5 rounded-lg" *ngIf="data.descriptions" [@slideDown]>
+      <div class="text-xl">{{ 'Detail' | translate }}</div>
+      <hr>
+      <div class="pt-2">{{ data.detail || '' | translate }}</div>
+      <ng-container *ngIf="showDetail">
+        @for (desc of data.descriptions; track desc) {
+          <div [@slideDown]>
+            <div class="flex pt-3 align-bottom">
+              {{ desc.imgDesc || '' | translate }}
+            </div>
+            <img ngSrc="{{desc.imgUrl}}" fill alt="" style="position:relative; padding-top: 1rem">
+          </div>
+        }
+      </ng-container>
+      <div class="m-2 flex justify-center">
+        <button mat-raised-button (click)="toggleDetailVisibility()">{{ buttonText | translate }}</button>
+      </div>
+    </div>
+
+    <!--  Location-->
+    <div class="bg-white p-4 mt-5 rounded-lg" *ngIf="data.location">
+      <div class="text-xl">{{ 'Location' | translate }}</div>
+      <hr>
+      <div class="pt-2" *ngIf="data.location.desc">{{ data.location.desc || '' | translate }}</div>
+      <img ngSrc="{{ data.location.url }}" priority fill alt="" style="position:relative; padding-top: 1rem;" class="rounded-xl">
+    </div>
+
+    <!--Layout-->
+    <div class="bg-white p-4 mt-5 rounded-lg" *ngIf="data.layouts">
+      <div class="text-xl">{{ 'Layout' | translate }}</div>
+      <hr>
+      @for (img of data.layouts; track img) {
+        <div class="flex pt-3 align-bottom" (click)="toggleImageVisibility(img)">
+          <mat-icon *ngIf="!img.imgVisible">keyboard_arrow_down</mat-icon>
+          <mat-icon *ngIf="img.imgVisible">keyboard_arrow_up</mat-icon>
+          {{ img.imgDesc || '' | translate }}
+        </div>
+        <ng-container *ngIf="img.imgVisible">
+          <img [@slideDown] ngSrc="{{img.imgUrl}}" fill alt="" style="position:relative; padding-top: 1rem"
+               class="rounded-xl">
+        </ng-container>
+      }
+    </div>
+
+    <!--Brochure-->
+    <div class="bg-white p-4 mt-5 rounded-lg" *ngIf="data.brochureUrl">
+      <div class="w-full flex justify-center text-xl">{{ 'Brochure' | translate }}</div>
+      <hr>
+      <div class="w-full flex justify-center pt-2">
+        <a href="{{data.brochureUrl}}" target="_blank">
+          <button mat-fab extended>
+            <mat-icon>download</mat-icon>
+            {{ "Click to download" | translate }}
+          </button>
+        </a>
+      </div>
+    </div>
+
+    <button
+      mat-mini-fab
+      (click)="goTop()"
+      class="scroll-top-button lg:right-[2vw] right-[4vw]"
+      matTooltip="{{'Scroll to top' | translate}}"
+    >
+      <mat-icon>arrow_upward</mat-icon>
+    </button>
+  </div>
+  <app-contact
+    [data]= "this.data"
+    [date]="this.currentDate"
+  ></app-contact>
 </div>
 <app-footer></app-footer>

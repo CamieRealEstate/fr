@@ -2,14 +2,17 @@ export interface InfoList {
   area?: string;
   averageAreaOfUnit?: string;
   developer?: string;
-  estimatedHandoverDate?: number;
-  phase?: number;
-  subzone?: number;
+  designer?: string;
+  estimatedHandoverDate?: string;
   handoverStandard?: string;
   height?: number;
-  numberOfUnit?: number;
-  startingPrice?: number;
   maxPrice?: number;
+  numberOfUnit?: string;
+  operator?: string;
+  phase?: number;
+  startingPrice?: number;
+  startFrom?: number;
+  subzone?: number;
   towers?: number;
   type?: string[];
 }
@@ -62,7 +65,43 @@ export interface Data {
 
 export const data: Data = {
   BK: [],
-  TK: [],
+  TK: [
+    {
+      id: 0,
+      region: 'TK',
+      name: 'NOBU DA NANG',
+      state: 'Hot',
+      detail: 'NB-0-details',
+      logoUrl: '/fr/nobu/logo.png',
+      brochureUrl: 'https://drive.google.com/drive/folders/1_gUKNEFaiwDqKbAZ5AILyTypZxgI2-nK?usp=sharing',
+      descriptions: [
+        { imgDesc: 'NB-1-details', imgUrl: '/fr/nobu/podium.jpg' },
+      ],
+      address: 'Son Tra, Da Nang, Viet Nam',
+      location: { id: 0, url: '/fr/nobu/location.png', desc: 'NB-location' },
+      layouts: [
+        { imgDesc: 'Tower overview', imgUrl: '/fr/nobu/floor-plan/1.jpg' },
+      ],
+      info: {
+        area: '3000 m²',
+        averageAreaOfUnit: '42 m² to 425 m²',
+        developer: 'VCRE',
+        operator: 'Managed by Nobu Hospitality',
+        designer: 'Planetworks (USA)',
+        numberOfUnit: '186 hotels and 264 vacation apartment',
+        startFrom: 120,
+        type: ['Vacation Apartment', 'Restaurant', 'Hotel'],
+        estimatedHandoverDate: "Q1.2027"
+      },
+      imgUrls: [
+        { id: 0, url: '/fr/nobu/logo.png' },
+        { id: 1, url: '/fr/nobu/hotel.png' },
+        { id: 2, url: '/fr/nobu/capture.png'},
+        { id: 3, url: '/fr/nobu/fineDining.jpg'},
+        { id: 4, url: '/fr/nobu/chef.jpg'}
+      ]
+    }
+  ],
   NK: [
     {
       id: 0,
@@ -77,12 +116,12 @@ export const data: Data = {
         { imgDesc: 'SY-2-details', imgUrl: '/fr/sycamore/detail-2.jpg' }
       ],
       address: 'Binh Duong New City, Viet Nam',
-      location: { id: 1, url: '/fr/sycamore/location.jpg', desc: '' },
+      location: { id: 0, url: '/fr/sycamore/location.jpg', desc: '' },
       layouts: [
-        { imgDesc: 'Typical floor plan of Orchard Hill I', imgUrl: '/fr/sycamore/floor-flan/1.jpg' },
-        { imgDesc: 'Typical floor plan of Orchard Hill II', imgUrl: '/fr/sycamore/floor-flan/2.jpg' },
-        { imgDesc: 'Duplex floor plan', imgUrl: '/fr/sycamore/floor-flan/3.png' },
-        { imgDesc: 'Penthouse floor plan', imgUrl: '/fr/sycamore/floor-flan/4.png' }
+        { imgDesc: 'Typical floor plan of Orchard Hill I', imgUrl: '/fr/sycamore/floor-plan/1.jpg' },
+        { imgDesc: 'Typical floor plan of Orchard Hill II', imgUrl: '/fr/sycamore/floor-plan/2.jpg' },
+        { imgDesc: 'Duplex floor plan', imgUrl: '/fr/sycamore/floor-plan/3.png' },
+        { imgDesc: 'Penthouse floor plan', imgUrl: '/fr/sycamore/floor-plan/4.png' }
       ],
       info: {
         phase: 2,
@@ -91,14 +130,14 @@ export const data: Data = {
         averageAreaOfUnit: '60 m² to 250 m²',
         developer: 'CapitaLand and UOA Group',
         maxPrice: 95,
-        numberOfUnit: 3500,
+        numberOfUnit: '3500',
         startingPrice: 48,
         type: ['Apartment', 'Townhouse', 'Villa']
       },
       imgUrls: [
-        { id: 1, url: '/fr/sycamore/slide-1.jpg' },
-        { id: 2, url: '/fr/sycamore/slide-2.jpg' },
-        { id: 3, url: '/fr/sycamore/slide-3.jpg' }
+        { id: 0, url: '/fr/sycamore/slide-1.jpg' },
+        { id: 1, url: '/fr/sycamore/slide-2.jpg' },
+        { id: 2, url: '/fr/sycamore/slide-3.jpg' }
       ]
     },
     {
@@ -113,7 +152,7 @@ export const data: Data = {
         { imgDesc: 'OP-1-details', imgUrl: '/fr/Opusk/Location1.jpg' }
       ],
       address: 'Thu Thiem, Ho Chi Minh City, Viet Nam',
-      location: { id: 1, url: '/fr/Opusk/Location.jpg', desc: 'OP-Location-Desc' },
+      location: { id: 0, url: '/fr/Opusk/Location.jpg', desc: 'OP-Location-Desc' },
       layouts: [
         { imgDesc: 'Typical floor plan floor 9-18 and 20-23', imgUrl: '/fr/Opusk/FloorPlan/1.png' },
         { imgDesc: 'Typical floor plan floor 24-33', imgUrl: '/fr/Opusk/FloorPlan/2.jpg' }
@@ -128,11 +167,11 @@ export const data: Data = {
         type: ['Apartment', 'Shophouse', 'Officetel']
       },
       imgUrls: [
-        { id: 1, url: '/fr/Opusk/cover/1.jpg' },
-        { id: 2, url: '/fr/Opusk/cover/3.jpg' },
-        { id: 3, url: '/fr/Opusk/cover/4.jpg' },
-        { id: 4, url: '/fr/Opusk/cover/6.jpg' },
-        { id: 5, url: '/fr/Opusk/cover/7.jpg' }
+        { id: 0, url: '/fr/Opusk/cover/1.jpg' },
+        { id: 1, url: '/fr/Opusk/cover/3.jpg' },
+        { id: 2, url: '/fr/Opusk/cover/4.jpg' },
+        { id: 3, url: '/fr/Opusk/cover/6.jpg' },
+        { id: 4, url: '/fr/Opusk/cover/7.jpg' }
       ]
     }
   ]

@@ -1,0 +1,48 @@
+<div class="lg:col-span-1 lg:pt-6 pb-4 lg:pr-10 px-2">
+  <div class="rounded-lg bg-white p-4">
+    <div class="px-4 mx-auto max-w-xl bg-white">
+      <h1 class="text-2xl text-gray-800 text-center">
+        {{ 'Get in contact' | translate }}
+      </h1>
+      <form class="mt-2 space-y-4" [formGroup]="contactForm">
+        <input
+          type="text"
+          formControlName="name"
+          required
+          placeholder="{{ 'Name' | translate }}"
+          class="w-full rounded-md py-3 px-4 text-gray-800 bg-gray-100 focus:bg-transparent text-sm outline-blue-500"
+        />
+
+        <input
+          type="email"
+          formControlName="email"
+          required
+          placeholder="{{ 'Email' | translate }}"
+          class="w-full rounded-md py-3 px-4 text-gray-800 bg-gray-100 focus:bg-transparent text-sm outline-blue-500"
+        />
+
+        <input
+          type="text"
+          formControlName="title"
+          required
+          readonly
+          class="w-full rounded-md py-3 px-4 text-gray-800 bg-gray-100"
+        />
+
+        <textarea
+          rows="4"
+          formControlName="message"
+          class="w-full rounded-md px-4 text-gray-800 bg-gray-100 focus:bg-transparent text-sm pt-3 outline-blue-500"
+        >
+        </textarea>
+        <button
+        type="button"
+        (click)="onSubmit()"
+        class="text-white bg-blue-500 hover:bg-blue-600 tracking-wide rounded-md text-sm px-4 py-3 w-full"
+      >
+        {{ 'Send mail' | translate }}
+      </button>
+      </form>
+    </div>
+  </div>
+</div>

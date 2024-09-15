@@ -9,11 +9,12 @@ import { KEY_ITEM } from './detail.entities';
 import { trigger, transition, style, animate } from '@angular/animations';
 import { MatButton, MatFabButton, MatMiniFabButton } from '@angular/material/button';
 import { MatTooltip } from '@angular/material/tooltip';
+import { ContactComponent } from '../@ui/contact/contact.component';
 
 @Component({
   selector: 'app-detail',
   standalone: true,
-  imports: [CommonModule, HeaderComponent, TranslateModule, NgOptimizedImage, MatIcon, MatButton, MatFabButton, MatMiniFabButton, MatTooltip, FooterComponent],
+  imports: [CommonModule, HeaderComponent, TranslateModule, NgOptimizedImage, MatIcon, MatButton, MatFabButton, MatMiniFabButton, MatTooltip, FooterComponent, ContactComponent],
   templateUrl: './detail.component.html',
   styleUrl: './detail.component.scss',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
