@@ -50,6 +50,6 @@ export class ContactComponent implements OnInit, OnDestroy {
 
   onSubmit() {
     console.log("submit");
-    console.log("_________________________________", this.contactForm.value);
+    console.log(this.contactForm.value);
   }
 }
