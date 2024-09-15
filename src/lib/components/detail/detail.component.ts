@@ -1,15 +1,16 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA, signal } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, Inject, OnInit, signal } from '@angular/core';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { MatIcon } from '@angular/material/icon';
-import { TranslateModule } from '@ngx-translate/core';
-
-import { data, DEFAULT_REGION, KEY_REGION, HeaderComponent, ListItem, Layout, FooterComponent } from '../../../lib';
-
-import { KEY_ITEM } from './detail.entities';
 import { trigger, transition, style, animate } from '@angular/animations';
 import { MatButton, MatFabButton, MatMiniFabButton } from '@angular/material/button';
 import { MatTooltip } from '@angular/material/tooltip';
+import { MAT_DIALOG_DATA, MatDialog } from '@angular/material/dialog';
+import { TranslateModule } from '@ngx-translate/core';
+
+import { data, DEFAULT_REGION, KEY_REGION, HeaderComponent, ListItem, Layout, FooterComponent } from '../../../lib';
 import { ContactComponent } from '../@ui/contact/contact.component';
+
+import { KEY_ITEM } from './detail.entities';
 
 @Component({
   selector: 'app-detail',
@@ -31,18 +32,21 @@ import { ContactComponent } from '../@ui/contact/contact.component';
     trigger('fadeInTopFast', [
       transition(':enter', [
         style({ opacity: 0, transform: 'translateY(-5%)' }),
-        animate('400ms ease-out', style({ opacity: 1, transform: 'translateY(0)' })),
-      ]),
+        animate('400ms ease-out', style({ opacity: 1, transform: 'translateY(0)' }))
+      ])
     ]),
     trigger('fadeInTopSlow', [
       transition(':enter', [
         style({ opacity: 0, transform: 'translateY(-5%)' }),
-        animate('600ms ease-out', style({ opacity: 1, transform: 'translateY(0)' })),
-      ]),
+        animate('600ms ease-out', style({ opacity: 1, transform: 'translateY(0)' }))
+      ])
     ])
   ]
 })
 export class DetailComponent {
+  constructor(private dialog: MatDialog) {
+  }
+
   item = signal(new URLSearchParams(window.location.search).get(KEY_ITEM));
   region = signal(new URLSearchParams(window.location.search).get(KEY_REGION) || DEFAULT_REGION);
 
@@ -54,6 +58,12 @@ export class DetailComponent {
     return this.showDetail ? 'Hide' : 'Show more';
   }
 
+  openLargeImage(image: any) {
+    const dialogRef = this.dialog.open(LargeImageViewDialogComponent, {
+      data: { url: image.url }
+    });
+  }
+
   toggleImageVisibility(img: Layout) {
     img.imgVisible = !img.imgVisible;
   }
@@ -63,6 +73,26 @@ export class DetailComponent {
   }
 
   goTop() {
-    window.scrollTo({top: 0, behavior: 'smooth'});
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
+}
+
+@Component({
+  selector: 'app-large-image-view-dialog',
+  template: `
+    <div class="dialog-content">
+      <img src="{{imageUrl}}" alt="Large Image" style="width: 100%; height: 100%">
+    </div>
+  `,
+  imports: [
+    NgOptimizedImage
+  ],
+  standalone: true
+})
+export class LargeImageViewDialogComponent {
+  constructor(@Inject(MAT_DIALOG_DATA) public img: any) {
+    this.imageUrl = this.img.url;
+  }
+
+  imageUrl: string;
 }

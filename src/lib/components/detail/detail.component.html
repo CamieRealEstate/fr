@@ -26,7 +26,14 @@
           @for (img of data.imgUrls; track img.id) {
             <swiper-slide>
               <div class="h-[40dvh] relative">
-                <img ngSrc="{{img.url}}" alt="" fill class="rounded-2xl" priority>
+                <img 
+                  ngSrc="{{img.url}}" 
+                  alt="" 
+                  fill 
+                  class="rounded-2xl" 
+                  priority
+                  (click)="openLargeImage(img)"
+                >
               </div>
             </swiper-slide>
           }
@@ -116,10 +123,10 @@
       <ng-container *ngIf="showDetail">
         @for (desc of data.descriptions; track desc) {
           <div [@slideDown]>
-            <div class="flex pt-3 align-bottom">
+            <div *ngIf="desc.imgDesc" class="flex pt-3 align-bottom">
               {{ desc.imgDesc || '' | translate }}
             </div>
-            <img ngSrc="{{desc.imgUrl}}" fill alt="" style="position:relative; padding-top: 1rem">
+            <img *ngIf="desc.imgUrl" ngSrc="{{desc.imgUrl}}" fill alt="" style="position:relative; padding-top: 1rem">
           </div>
         }
       </ng-container>

@@ -75,7 +75,11 @@ export const data: Data = {
       logoUrl: '/fr/nobu/logo.png',
       brochureUrl: 'https://drive.google.com/drive/folders/1_gUKNEFaiwDqKbAZ5AILyTypZxgI2-nK?usp=sharing',
       descriptions: [
-        { imgDesc: 'NB-1-details', imgUrl: '/fr/nobu/podium.jpg' },
+        { imgDesc: '', imgUrl: '/fr/nobu/podium.jpg' },
+        { imgDesc: 'NB-4-details', imgUrl: '/fr/nobu/founder.png' },
+        { imgDesc: 'NB-1-details', imgUrl: '' },
+        { imgDesc: 'NB-2-details', imgUrl: '' },
+        { imgDesc: 'NB-3-details', imgUrl: '' },
       ],
       address: 'Son Tra, Da Nang, Viet Nam',
       location: { id: 0, url: '/fr/nobu/location.png', desc: 'NB-location' },
