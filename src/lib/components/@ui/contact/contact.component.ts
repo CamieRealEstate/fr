@@ -54,7 +54,6 @@ export class ContactComponent implements OnInit, OnDestroy {
   }
 
   onSubmit() {
-    this.showSuccessSnackbar();
     if (this.contactForm.valid) {
       console.log(this.contactForm.value);
       this.sendEmail();
