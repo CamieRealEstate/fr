@@ -12,6 +12,10 @@
           placeholder="{{ 'Name' | translate }}"
           class="w-full rounded-md py-3 px-4 text-gray-800 bg-gray-100 focus:bg-transparent text-sm outline-blue-500"
         />
+        
+        <mat-error *ngIf="!contactForm.get('name')?.valid && !contactForm.get('name')?.pristine" class="validation-error text-sm">
+          {{ 'Name is required' | translate }}
+        </mat-error>
 
         <input
           type="email"
@@ -20,6 +24,22 @@
           placeholder="{{ 'Email' | translate }}"
           class="w-full rounded-md py-3 px-4 text-gray-800 bg-gray-100 focus:bg-transparent text-sm outline-blue-500"
         />
+        
+        <mat-error *ngIf="!contactForm.get('email')?.valid && !contactForm.get('email')?.pristine" class="validation-error text-sm">
+          {{ 'Invalid email' | translate }}
+        </mat-error>
+
+        <input
+          type="text"
+          formControlName="phone"
+          required
+          placeholder="{{ 'Phone' | translate }}"
+          class="w-full rounded-md py-3 px-4 text-gray-800 bg-gray-100 focus:bg-transparent text-sm outline-blue-500"
+        />
+
+        <mat-error *ngIf="!contactForm.get('phone')?.valid && !contactForm.get('phone')?.pristine" class="validation-error text-sm">
+          {{ 'Invalid phone number' | translate }}
+        </mat-error>
 
         <input
           type="text"
@@ -35,13 +55,15 @@
           class="w-full rounded-md px-4 text-gray-800 bg-gray-100 focus:bg-transparent text-sm pt-3 outline-blue-500"
         >
         </textarea>
+
         <button
-        type="button"
-        (click)="onSubmit()"
-        class="text-white bg-blue-500 hover:bg-blue-600 tracking-wide rounded-md text-sm px-4 py-3 w-full"
-      >
-        {{ 'Send mail' | translate }}
-      </button>
+          type="button"
+          (click)="onSubmit()"
+          class="text-white bg-blue-500 hover:bg-blue-600 tracking-wide rounded-md text-sm px-4 py-3 w-full"
+        >
+          {{ 'Send mail' | translate }}
+        </button>
+          <mat-progress-bar *ngIf="isLoading()" mode="indeterminate"></mat-progress-bar>
       </form>
     </div>
   </div>
