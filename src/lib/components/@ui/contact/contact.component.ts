@@ -75,7 +75,8 @@ export class ContactComponent implements OnInit, OnDestroy {
       message: this.contactForm.get('message')?.value || '',
       name: this.contactForm.get('name')?.value || '',
       phone: this.contactForm.get('phone')?.value || '',
-      email: this.contactForm.get('email')?.value || ''
+      email: this.contactForm.get('email')?.value || '',
+      project: this.data?.name || ''
     })
       .then(() => {
         this.isLoading.set(false)
