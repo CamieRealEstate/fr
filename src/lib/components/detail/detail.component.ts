@@ -60,7 +60,9 @@ export class DetailComponent {
 
   openLargeImage(image: any) {
     const dialogRef = this.dialog.open(LargeImageViewDialogComponent, {
-      data: { url: image.url }
+      data: { url: image.url },
+      minWidth: '400px',
+      maxWidth: '1200px'
     });
   }
 
